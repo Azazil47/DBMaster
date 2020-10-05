@@ -23,13 +23,14 @@ namespace DBMaster
         
         private void button2_Click(object sender, EventArgs e) //Status
         {
+            listService[0].Refresh();
            MessageBox.Show(listService[0].Status()) ;
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            listService[0].Stop();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,8 +45,7 @@ namespace DBMaster
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ServiceClass myserv = new ServiceClass("FirebirdServerDefaultInstance");
-            myserv.Start();
+            listService[0].Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)

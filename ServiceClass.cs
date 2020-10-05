@@ -8,19 +8,29 @@ public class ServiceClass : ServiceController
 		public ServiceClass(String name)
 		{
 		this.nameService = new ServiceController(name);
+		base.ServiceName = name;
 		}
-		public void Start()
+		public new void Start()
 		{
 		
-		//this.nameService.Start();
+		base.Start();
 		MessageBox.Show("OK");
-		}
-
-		public  void Stop() 
-    {
 		
-		MessageBox.Show("OK");
 	}
+
+		public new  void Stop() 
+    {
+		base.Stop();
+		MessageBox.Show("OK");
+		
+
+	}
+
+	public new void Refresh()
+    {
+		base.Refresh();
+		MessageBox.Show("Refresh");
+    }
 
 	public String Status()
     {
