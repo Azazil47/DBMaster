@@ -6,11 +6,8 @@ using System.ServiceProcess;
 
 namespace DBMaster
 {
-    
     static class Program
     {
-        public static ServiceController ser = new ServiceController("FirebirdServerDefaultInstance"); 
-
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -19,11 +16,7 @@ namespace DBMaster
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
             Application.Run(new Form1());
-           
-            
-
     }
     }
 }
