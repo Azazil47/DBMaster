@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DBMaster;
+using System;
 using System.ServiceProcess;
+using System.Threading;
 using System.Windows.Forms;
 
 public class ServiceClass : ServiceController
@@ -11,13 +13,17 @@ public class ServiceClass : ServiceController
     public new void Start()
     {
         base.Start();
-        MessageBox.Show("OK");
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {base.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
+        Thread.Sleep(1000);
+        this.Refresh();
     }
 
     public new void Stop()
     {
         base.Stop();
-        MessageBox.Show("OK");
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {base.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
+        Thread.Sleep(1000);
+        this.Refresh();
     }
 
     public new String Status()
@@ -26,12 +32,10 @@ public class ServiceClass : ServiceController
         return base.Status.ToString();
     }
 
-    public String getName()
+    public new void Refresh()
     {
-        return base.DisplayName;
+        base.Refresh();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {base.DisplayName}\tСтатус: {base.Status.ToString()}");
     }
-
-
-
 }
 

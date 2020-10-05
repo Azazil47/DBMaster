@@ -7,7 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBMaster", "DBMaster.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7095EAAE-2CDD-4D9C-B51B-5E005CA90E49}"
 	ProjectSection(SolutionItems) = preProject
-		LevelLog.cs = LevelLog.cs
 		Services.ini = Services.ini
 	EndProjectSection
 EndProject
