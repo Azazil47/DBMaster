@@ -37,6 +37,7 @@ namespace DBMaster
             checkBox1.Location = new Point(10, 10);
             listService.Add(new ServiceClass("FirebirdServerDefaultInstance"));
             checkBox1.Text = listService[0].getName();
+            checkBox1.Width = 300;
             this.Controls.Add(checkBox1);
         }
 
