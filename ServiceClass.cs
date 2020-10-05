@@ -3,44 +3,35 @@ using System.ServiceProcess;
 using System.Windows.Forms;
 
 public class ServiceClass : ServiceController
-	{
-		public ServiceClass(String name)
-		{
-		base.ServiceName = name;
-		}
-		public new void Start()
-		{
-		
-		base.Start();
-		MessageBox.Show("OK");
-		
-	}
-
-		public new  void Stop() 
+{
+    public ServiceClass(String name)
     {
-		base.Stop();
-		MessageBox.Show("OK");
-		
-
-	}
-
-	public new void Refresh()
+        base.ServiceName = name;
+    }
+    public new void Start()
     {
-		base.Refresh();
-		MessageBox.Show("Refresh");
+        base.Start();
+        MessageBox.Show("OK");
     }
 
-	public String Status()
+    public new void Stop()
     {
-	return	base.Status.ToString();
+        base.Stop();
+        MessageBox.Show("OK");
     }
 
-	public String getName()
+    public new String Status()
     {
-		return base.DisplayName;
+        base.Refresh();
+        return base.Status.ToString();
     }
 
-		
+    public String getName()
+    {
+        return base.DisplayName;
+    }
 
-	}
+
+
+}
 
