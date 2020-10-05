@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ServiceProcess;
+using System.Windows.Forms;
 
-	public class ServiceClass
+public class ServiceClass : ServiceController
 	{
 		private ServiceController nameService;
 		public ServiceClass(String name)
@@ -10,8 +11,16 @@ using System.ServiceProcess;
 		}
 		public void Start()
 		{
-		this.nameService.Start();
+		
+		//this.nameService.Start();
+		MessageBox.Show("OK");
 		}
+
+		public  void Stop() 
+    {
+		
+		MessageBox.Show("OK");
+	}
 
 	public String Status()
     {
