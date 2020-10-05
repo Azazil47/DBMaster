@@ -8,10 +8,22 @@ using System.ServiceProcess;
 		{
 		this.nameService = new ServiceController(name);
 		}
-		public void Start(String name)
+		public void Start()
 		{
 		this.nameService.Start();
 		}
+
+	public String Status()
+    {
+	return	this.nameService.Status.ToString();
+    }
+
+	public String getName()
+    {
+		return this.nameService.DisplayName;
+    }
+
+		
 
 	}
 
