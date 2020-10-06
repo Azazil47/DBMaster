@@ -5,11 +5,6 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBMaster", "DBMaster.csproj", "{82C52A3F-FFB2-4882-9ED1-2C3A943426DC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7095EAAE-2CDD-4D9C-B51B-5E005CA90E49}"
-	ProjectSection(SolutionItems) = preProject
-		Services.ini = Services.ini
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

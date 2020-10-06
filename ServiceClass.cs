@@ -4,12 +4,17 @@ using System.ServiceProcess;
 using System.Threading;
 using System.Windows.Forms;
 
+[Serializable]
 public class ServiceClass : ServiceController
 {
+    public String name;
     public ServiceClass(String name)
     {
         base.ServiceName = name;
+        this.name = name;
     }
+
+    public ServiceClass() { }
     public new void Start()
     {
         base.Start();
