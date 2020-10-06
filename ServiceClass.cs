@@ -5,42 +5,48 @@ using System.Threading;
 using System.Windows.Forms;
 
 [Serializable]
-public class ServiceClass : ServiceController
+public class ServiceClass // : ServiceController
 {
-    public String name;
+    //public String name;
+    [NonSerialized]
+    public ServiceController name;
     public ServiceClass(String name)
     {
-        base.ServiceName = name;
-        this.name = name;
+        //base.ServiceName = name;
+        this.name = new ServiceController(name);
     }
 
     public ServiceClass() { }
-    public new void Start()
+    public void Start()
     {
-        base.Start();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {base.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
+        this.name.Start();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {this.name.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
         Thread.Sleep(1000);
-        this.Refresh();
+        
+        this.name.Refresh();
     }
 
-    public new void Stop()
+    public void Stop()
     {
-        base.Stop();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {base.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
+        this.name.Stop();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {this.name.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
         Thread.Sleep(1000);
-        this.Refresh();
+        this.name.Refresh();
     }
 
-    public new String Status()
+    public String Status()
     {
-        base.Refresh();
-        return base.Status.ToString();
+        this.name.Refresh();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба: {this.name.DisplayName} \tСтатус: {this.name.Status.ToString()}");
+
+        return this.name.Status.ToString(); 
     }
 
-    public new void Refresh()
+    public void Refresh()
     {
-        base.Refresh();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {base.DisplayName}\tСтатус: {base.Status.ToString()}");
+        this.name.Refresh();
     }
+
+    
 }
 

@@ -13,22 +13,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace DBMaster
 {
-    [Serializable]
-    public class Person
-    {
-        public String name;
-
-        public Person() { }
-        public Person(String name)
-        {
-            this.name = name;
-        }
-    }
     public partial class Form1 : Form
     {
         ServiceClass serv = new ServiceClass("FirebirdServerDefaultInstance");
-        Person Ivan = new Person("Ivan");
-
+        
         public List<ServiceClass> listService = new List<ServiceClass>();
 
         public Form1()
@@ -39,14 +27,14 @@ namespace DBMaster
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
-            listService[0].Refresh();
-            MessageBox.Show(listService[0].Status());
+            serv.Refresh();
+            MessageBox.Show(serv.Status().ToString());
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listService[0].Stop();
+            serv.Stop();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,7 +44,7 @@ namespace DBMaster
 
         private void button3_Click(object sender, EventArgs e)
         {
-            listService[0].Start();
+            serv.Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -66,6 +54,18 @@ namespace DBMaster
             {
                 formatter.Serialize(fs, serv);
                 MessageBox.Show("Serializeble is good");
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("Services.dat", FileMode.OpenOrCreate))
+            {
+                ServiceClass serv = (ServiceClass)formatter.Deserialize(fs);
+                MessageBox.Show("DeSerializeble is good");
+               
+                
             }
         }
     }
