@@ -29,18 +29,17 @@ public static class ServiceClass // : ServiceController
 
     public static String Status(String name)
     {
-
-        ServiceController SC = new ServiceController(name);
-       
-
-         ServiceController service = new ServiceController(name);
-             service.Refresh();
-             MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба: {service.DisplayName} \tСтатус: {service.Status.ToString()}");
-             return service.Status.ToString();
-
-
-
-
+        ServiceController service = new ServiceController(name);
+        try
+        {
+            service.Refresh();
+            MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба: {service.DisplayName} \tСтатус: {service.Status.ToString()}");
+            return service.Status.ToString();
+        }
+        catch (Exception)
+        {
+            return "Служба не найдена";
+        }
     }
 
     public static void Refresh(String name)
