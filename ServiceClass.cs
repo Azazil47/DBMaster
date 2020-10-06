@@ -31,28 +31,12 @@ public static class ServiceClass // : ServiceController
     {
 
         ServiceController SC = new ServiceController(name);
-        bool ServiceIsInstalled = false;
-        try
-        {
-            // actually we need to try access ANY of service properties
-            // at least once to trigger an exception
-            // not neccessarily its name
-            string ServiceName = SC.DisplayName;
-            ServiceIsInstalled = true;
-            return SC.Status.ToString(); 
-        }
-        catch (InvalidOperationException) { }
-        finally
-        {
-             
-             SC.Close();
-        }
-        return SC.Status.ToString();
+       
 
-        /* ServiceController service = new ServiceController(name);
+         ServiceController service = new ServiceController(name);
              service.Refresh();
              MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба: {service.DisplayName} \tСтатус: {service.Status.ToString()}");
-             return service.Status.ToString();*/
+             return service.Status.ToString();
 
 
 

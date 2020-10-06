@@ -16,7 +16,7 @@ namespace DBMaster
     public partial class Form1 : Form
     {
         public static List<String[]> listService = new List<String[]>();
-        public static void LoadSrvice() //Загрузка списка служб из файла
+        public static void LoadService() //Загрузка списка служб из файла
         {
             try
             {
@@ -57,7 +57,7 @@ namespace DBMaster
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadSrvice();
+            LoadService();
             // listService.Add(new string[2] { "FirebirdServerDefaultInstance", $"{ServiceClass.Status("FirebirdServerDefaultInstance")}" });
             // listService.Add(new string[2] { "spooler", $"{ServiceClass.Status("spooler")}"});
             foreach (String[] item in listService)
