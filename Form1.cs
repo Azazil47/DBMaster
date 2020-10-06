@@ -15,9 +15,7 @@ namespace DBMaster
 {
     public partial class Form1 : Form
     {
-        ServiceClass serv = new ServiceClass("FirebirdServerDefaultInstance");
-        
-        public List<ServiceClass> listService = new List<ServiceClass>();
+        public List<String[]> listService = new List<String[]>();
 
         public Form1()
         {
@@ -27,29 +25,37 @@ namespace DBMaster
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
-            serv.Refresh();
-            MessageBox.Show(serv.Status().ToString());
+            //serv.Refresh();
+           // MessageBox.Show(serv.Status().ToString());
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            serv.Stop();
+           // serv.Stop();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            listService.Add(new string[2] { "FirebirdServerDefaultInstance", $"{ServiceClass.Status("FirebirdServerDefaultInstance")}" });
+            listService.Add(new string[2] { "spooler", $"{ServiceClass.Status("spooler")}"});
+            foreach (String[] item in listService)
+            {
+                dataGridView1.Rows.Add(item);
+            }
             
+
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            serv.Start();
+           // serv.Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+           /* BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("Services.dat", FileMode.OpenOrCreate))
             {
                 formatter.Serialize(fs, serv);
@@ -61,19 +67,19 @@ namespace DBMaster
             {
                 formatter.Serialize(fs2, serv);
                 MessageBox.Show("Serializeble is good XML");
-            }
+            }*/
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
+           /* BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream fs = new FileStream("Services.dat", FileMode.OpenOrCreate))
             {
                 ServiceClass serv = (ServiceClass)formatter.Deserialize(fs);
                 MessageBox.Show("DeSerializeble is good");
                
                 
-            }
+            }*/
         }
     }
 }
