@@ -16,27 +16,8 @@ namespace DBMaster
     public partial class Form1 : Form
     {
         
-        public static List<String[]> listService = new List<String[]>();
-        public static void LoadService() //Загрузка списка служб из файла
-        {
         
-            try
-            {
-                using (StreamReader sr = new StreamReader("Services.ini"))
-                {
-                    String line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        listService.Add(new string[2] { line, ServiceClass.Status(line) });
-                    }
-                }
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("File is bad");
-            }
-        }
+        
         public Form1()
         {
             InitializeComponent();
@@ -59,13 +40,13 @@ namespace DBMaster
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadService();
+            //LoadService();
             // listService.Add(new string[2] { "FirebirdServerDefaultInstance", $"{ServiceClass.Status("FirebirdServerDefaultInstance")}" });
             // listService.Add(new string[2] { "spooler", $"{ServiceClass.Status("spooler")}"});
-            foreach (String[] item in listService)
+           /* foreach (String[] item in listService)
             {
                 dataGridView1.Rows.Add(item);
-            }
+            }*/
 
 
 

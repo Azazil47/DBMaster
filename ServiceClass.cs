@@ -17,6 +17,7 @@ public static class ServiceClass // : ServiceController
             {
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
+                Program.myForm.textBoxLog.Text = $"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ\n";
                 Thread.Sleep(1000);
                 service.Refresh();
             } else
