@@ -20,12 +20,13 @@ namespace DBMaster
         {
             try
             {
-                using (StreamReader sr = new StreamReader("Services.ini"))
+                using (StreamReader sr = new StreamReader("Services.ini", System.Text.Encoding.Default))
                 {
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listService.Add(new string[2] { line, ServiceClass.Status(line)});
+                        
+                        listService.Add(new string[2] {line, ServiceClass.Status(line).ToString()});
                     }
                 }
                 MessageBox.Show("Load is good");
