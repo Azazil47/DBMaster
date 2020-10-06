@@ -55,6 +55,13 @@ namespace DBMaster
                 formatter.Serialize(fs, serv);
                 MessageBox.Show("Serializeble is good");
             }
+
+            XmlSerializer formatter2 = new XmlSerializer(typeof(ServiceClass));
+            using (FileStream fs2 = new FileStream("Sevices.xml", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs2, serv);
+                MessageBox.Show("Serializeble is good XML");
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)

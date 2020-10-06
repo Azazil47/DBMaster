@@ -5,46 +5,40 @@ using System.Threading;
 using System.Windows.Forms;
 
 [Serializable]
-public class ServiceClass // : ServiceController
+public static class ServiceClass // : ServiceController
 {
-    //public String name;
-    [NonSerialized]
-    public ServiceController name;
-    public ServiceClass(String name)
+    public static void Start(String name)
     {
-        //base.ServiceName = name;
-        this.name = new ServiceController(name);
-    }
-
-    public ServiceClass() { }
-    public void Start()
-    {
-        this.name.Start();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {this.name.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
+        ServiceController service = new ServiceController(name);
+        service.Start();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
         Thread.Sleep(1000);
-        
-        this.name.Refresh();
+
+        service.Refresh();
     }
 
-    public void Stop()
+    public static void Stop(String name)
     {
-        this.name.Stop();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {this.name.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
+        ServiceController service = new ServiceController(name);
+        service.Stop();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
         Thread.Sleep(1000);
-        this.name.Refresh();
+        service.Refresh();
     }
 
-    public String Status()
+    public static String Status(String name)
     {
-        this.name.Refresh();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба: {this.name.DisplayName} \tСтатус: {this.name.Status.ToString()}");
+        ServiceController service = new ServiceController(name);
+        service.Refresh();
+        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба: {service.DisplayName} \tСтатус: {service.Status.ToString()}");
 
-        return this.name.Status.ToString(); 
+        return service.Status.ToString(); 
     }
 
-    public void Refresh()
+    public static void Refresh(String name)
     {
-        this.name.Refresh();
+        ServiceController service = new ServiceController(name);
+        service.Refresh();
     }
 
     
