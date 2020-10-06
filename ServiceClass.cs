@@ -5,17 +5,34 @@ using System.ServiceProcess;
 using System.Threading;
 using System.Windows.Forms;
 
-[Serializable]
 public static class ServiceClass // : ServiceController
 {
     public static void Start(String name)
     {
         ServiceController service = new ServiceController(name);
-        service.Start();
-        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
-        Thread.Sleep(1000);
+        try
+        {
+            
+            if (!service.Status.Equals("Running"))
+            {
+                service.Start();
+                MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
+                Thread.Sleep(1000);
+                service.Refresh();
+            } else
+            {
+                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба {service.DisplayName} уже запущена");
+            }
+        
+        
+        }
+        catch (Exception)
+        {
+            MessageBox.Show("Служба не смогла поднятся с колен");
+            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка запустить службу {service.DisplayName} привела к страшным последствиям");
+        }
+        
 
-        service.Refresh();
     }
 
     public static void Stop(String name)
@@ -45,6 +62,7 @@ public static class ServiceClass // : ServiceController
     public static void Refresh(String name)
     {
         ServiceController service = new ServiceController(name);
+        
         service.Refresh();
     }
 

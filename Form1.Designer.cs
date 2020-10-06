@@ -37,12 +37,13 @@
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonStopAll = new System.Windows.Forms.Button();
+            this.textBoxLog = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(344, 287);
+            this.buttonStop.Location = new System.Drawing.Point(367, 261);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(75, 23);
             this.buttonStop.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             // buttonStatus
             // 
-            this.buttonStatus.Location = new System.Drawing.Point(121, 287);
+            this.buttonStatus.Location = new System.Drawing.Point(128, 261);
             this.buttonStatus.Name = "buttonStatus";
             this.buttonStatus.Size = new System.Drawing.Size(75, 23);
             this.buttonStatus.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(221, 287);
+            this.buttonStart.Location = new System.Drawing.Point(231, 244);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 3;
@@ -72,7 +73,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(276, 376);
+            this.button1.Location = new System.Drawing.Point(335, 193);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -82,7 +83,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(406, 376);
+            this.button2.Location = new System.Drawing.Point(545, 311);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -103,10 +104,10 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ServiceName,
             this.ServiceState});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 76);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(277, 130);
+            this.dataGridView1.Size = new System.Drawing.Size(303, 113);
             this.dataGridView1.TabIndex = 6;
             // 
             // ServiceName
@@ -127,18 +128,27 @@
             // 
             // buttonStopAll
             // 
-            this.buttonStopAll.Location = new System.Drawing.Point(295, 29);
+            this.buttonStopAll.Location = new System.Drawing.Point(344, 76);
             this.buttonStopAll.Name = "buttonStopAll";
             this.buttonStopAll.Size = new System.Drawing.Size(98, 23);
             this.buttonStopAll.TabIndex = 7;
             this.buttonStopAll.Text = "Остановить все";
             this.buttonStopAll.UseVisualStyleBackColor = true;
             // 
+            // textBoxLog
+            // 
+            this.textBoxLog.Location = new System.Drawing.Point(92, 340);
+            this.textBoxLog.Multiline = true;
+            this.textBoxLog.Name = "textBoxLog";
+            this.textBoxLog.Size = new System.Drawing.Size(432, 55);
+            this.textBoxLog.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 475);
+            this.Controls.Add(this.textBoxLog);
             this.Controls.Add(this.buttonStopAll);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -151,6 +161,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -165,6 +176,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceState;
         private System.Windows.Forms.Button buttonStopAll;
+        public System.Windows.Forms.TextBox textBoxLog;
     }
 }
 

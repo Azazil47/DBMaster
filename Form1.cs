@@ -15,9 +15,11 @@ namespace DBMaster
 {
     public partial class Form1 : Form
     {
+        
         public static List<String[]> listService = new List<String[]>();
         public static void LoadService() //Загрузка списка служб из файла
         {
+        
             try
             {
                 using (StreamReader sr = new StreamReader("Services.ini"))
@@ -28,11 +30,10 @@ namespace DBMaster
                         listService.Add(new string[2] { line, ServiceClass.Status(line) });
                     }
                 }
-                MessageBox.Show("Load is good");
+                
             }
             catch (Exception)
             {
-
                 MessageBox.Show("File is bad");
             }
         }
@@ -47,6 +48,7 @@ namespace DBMaster
             //serv.Refresh();
             // MessageBox.Show(serv.Status().ToString());
 
+        
         }
 
         private void button1_Click(object sender, EventArgs e)
