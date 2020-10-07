@@ -42,6 +42,7 @@ namespace DBMaster
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoadService();
+            myForm = new Form1();
             Application.Run(myForm);
     }
     }
