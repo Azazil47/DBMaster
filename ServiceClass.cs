@@ -15,9 +15,10 @@ public static class ServiceClass // : ServiceController
         {
             if (!Status(name).Equals("Running"))
             {
+                
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
-               // Program.myForm.textBoxLog.Lines.Add = $"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ\n";
+                Program.myForm.textBoxLog.Text += $"{ DateTime.Now.ToString("hh: mm: ss")} - {MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName} Статус: ЗАПУСКАЕТСЯ\r\n";
                 Thread.Sleep(1000);
                 service.Refresh();
             } else
@@ -43,6 +44,7 @@ public static class ServiceClass // : ServiceController
             {
                 service.Stop();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
+                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("hh: mm: ss")} - {MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName} Статус: ОСТАНАВЛИВАЕТСЯ\r\n";
                 Thread.Sleep(1000);
                 service.Refresh();
             }
