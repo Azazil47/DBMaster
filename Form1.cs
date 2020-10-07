@@ -67,24 +67,24 @@ namespace DBMaster
         {
             ServiceClass.StopAll(Program.listService);
             //Program.LoadService();
-           /* Program.greedUpdate();
-            dataGridView1.Rows.Clear();
-            foreach (String[] item in Program.listService)
-            {
-                dataGridView1.Rows.Add(item);
-            }*/
-        }
-
-        private void buttonStartAll_Click(object sender, EventArgs e)
-        {
-            ServiceClass.StartAll(Program.listService);
-           /*Program.LoadService();
             Program.greedUpdate();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }*/
+            }
+        }
+
+        private void buttonStartAll_Click(object sender, EventArgs e)
+        {
+            ServiceClass.StartAll(Program.listService);
+            //Program.LoadService();
+            Program.greedUpdate();
+            dataGridView1.Rows.Clear();
+            foreach (String[] item in Program.listService)
+            {
+                dataGridView1.Rows.Add(item);
+            }
         }
     }
 }

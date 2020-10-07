@@ -48,7 +48,7 @@ namespace DBMaster
             }
         }
 
-      /*  public static void greedUpdate()
+      /* public static void greedUpdate()
         {
             MessageBox.Show("Thread");
             while (true)
