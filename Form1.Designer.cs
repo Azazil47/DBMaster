@@ -39,12 +39,18 @@
             this.buttonStopAll = new System.Windows.Forms.Button();
             this.textBoxLog = new System.Windows.Forms.TextBox();
             this.buttonStartAll = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(367, 261);
+            this.buttonStop.Location = new System.Drawing.Point(241, 336);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(75, 23);
             this.buttonStop.TabIndex = 0;
@@ -54,7 +60,7 @@
             // 
             // buttonStatus
             // 
-            this.buttonStatus.Location = new System.Drawing.Point(128, 261);
+            this.buttonStatus.Location = new System.Drawing.Point(24, 336);
             this.buttonStatus.Name = "buttonStatus";
             this.buttonStatus.Size = new System.Drawing.Size(75, 23);
             this.buttonStatus.TabIndex = 1;
@@ -64,7 +70,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(231, 244);
+            this.buttonStart.Location = new System.Drawing.Point(132, 336);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 3;
@@ -74,7 +80,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(335, 193);
+            this.button1.Location = new System.Drawing.Point(527, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
@@ -84,7 +90,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(545, 311);
+            this.button2.Location = new System.Drawing.Point(360, 336);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -105,10 +111,10 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ServiceName,
             this.ServiceState});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 76);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(303, 113);
+            this.dataGridView1.Size = new System.Drawing.Size(291, 113);
             this.dataGridView1.TabIndex = 6;
             // 
             // ServiceName
@@ -129,7 +135,8 @@
             // 
             // buttonStopAll
             // 
-            this.buttonStopAll.Location = new System.Drawing.Point(344, 115);
+            this.buttonStopAll.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonStopAll.Location = new System.Drawing.Point(3, 32);
             this.buttonStopAll.Name = "buttonStopAll";
             this.buttonStopAll.Size = new System.Drawing.Size(98, 23);
             this.buttonStopAll.TabIndex = 7;
@@ -139,15 +146,17 @@
             // 
             // textBoxLog
             // 
-            this.textBoxLog.Location = new System.Drawing.Point(92, 340);
+            this.textBoxLog.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBoxLog.Location = new System.Drawing.Point(3, 3);
             this.textBoxLog.Multiline = true;
             this.textBoxLog.Name = "textBoxLog";
-            this.textBoxLog.Size = new System.Drawing.Size(432, 55);
+            this.textBoxLog.Size = new System.Drawing.Size(799, 107);
             this.textBoxLog.TabIndex = 8;
             // 
             // buttonStartAll
             // 
-            this.buttonStartAll.Location = new System.Drawing.Point(344, 76);
+            this.buttonStartAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStartAll.Location = new System.Drawing.Point(3, 3);
             this.buttonStartAll.Name = "buttonStartAll";
             this.buttonStartAll.Size = new System.Drawing.Size(98, 23);
             this.buttonStartAll.TabIndex = 9;
@@ -155,26 +164,62 @@
             this.buttonStartAll.UseVisualStyleBackColor = true;
             this.buttonStartAll.Click += new System.EventHandler(this.buttonStartAll_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.textBoxLog);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 365);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(802, 110);
+            this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 308);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.buttonStartAll);
+            this.flowLayoutPanel2.Controls.Add(this.buttonStopAll);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(300, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(124, 58);
+            this.flowLayoutPanel2.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 475);
-            this.Controls.Add(this.buttonStartAll);
-            this.Controls.Add(this.textBoxLog);
-            this.Controls.Add(this.buttonStopAll);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.buttonStatus);
             this.Controls.Add(this.buttonStop);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -191,6 +236,9 @@
         private System.Windows.Forms.Button buttonStopAll;
         public System.Windows.Forms.TextBox textBoxLog;
         private System.Windows.Forms.Button buttonStartAll;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
 

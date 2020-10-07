@@ -17,7 +17,7 @@ public static class ServiceClass // : ServiceController
             {
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
-                Program.myForm.textBoxLog.Text = $"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ\n";
+               // Program.myForm.textBoxLog.Lines.Add = $"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ\n";
                 Thread.Sleep(1000);
                 service.Refresh();
             } else
@@ -65,7 +65,6 @@ public static class ServiceClass // : ServiceController
         {
             Stop(item[0]);
         }
-        
     }
 
     public static void StartAll(List<String[]> list)

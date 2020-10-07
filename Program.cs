@@ -21,14 +21,21 @@ namespace DBMaster
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listService.Add(new string[2] { line, ServiceClass.Status(line) });
+                        listService.Add(new string[2] { line, ServiceClass.Status(line)});
                     }
                 }
-
             }
             catch (Exception)
             {
                 MessageBox.Show("File is bad");
+            }
+        }
+
+        public static void RefreshList()
+        {
+            foreach (String[] item in listService)
+            {
+                item[1] = ServiceClass.Status(item[0]);
             }
         }
 

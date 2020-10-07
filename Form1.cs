@@ -23,26 +23,27 @@ namespace DBMaster
             InitializeComponent();
         }
 
+        /*public void gridUdate()
+        {
+            foreach (Stream[] item in Program.listService)
+            {
+
+            }
+        }*/
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
-            //serv.Refresh();
-            MessageBox.Show(ServiceClass.Status("FirebirdServerDefaultInstance").ToString());
 
         
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ServiceClass.Stop("FirebirdServerDefaultInstance");
-           // dataGridView1.Refresh();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //LoadService();
-            // listService.Add(new string[2] { "FirebirdServerDefaultInstance", $"{ServiceClass.Status("FirebirdServerDefaultInstance")}" });
-            // listService.Add(new string[2] { "spooler", $"{ServiceClass.Status("spooler")}"});
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
@@ -54,44 +55,27 @@ namespace DBMaster
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ServiceClass.Start("FirebirdServerDefaultInstance");
-           // dataGridView1.Refresh();
+           
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            /* BinaryFormatter formatter = new BinaryFormatter();
-             using (FileStream fs = new FileStream("Services.dat", FileMode.OpenOrCreate))
-             {
-                 formatter.Serialize(fs, serv);
-                 MessageBox.Show("Serializeble is good");
-             }
-
-             XmlSerializer formatter2 = new XmlSerializer(typeof(ServiceClass));
-             using (FileStream fs2 = new FileStream("Sevices.xml", FileMode.OpenOrCreate))
-             {
-                 formatter.Serialize(fs2, serv);
-                 MessageBox.Show("Serializeble is good XML");
-             }*/
+            dataGridView1.Rows.Clear();
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            foreach (String[] item in Program.listService)
-            {
-
-                dataGridView1.Rows.Add(item);
-            }
+            
         }
 
         private void buttonStopAll_Click(object sender, EventArgs e)
         {
             ServiceClass.StopAll(Program.listService);
+            //Program.LoadService();
+            Program.RefreshList();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
-                
                 dataGridView1.Rows.Add(item);
             }
         }
@@ -99,10 +83,11 @@ namespace DBMaster
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
             ServiceClass.StartAll(Program.listService);
+            //Program.LoadService();
+            Program.RefreshList();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
-                
                 dataGridView1.Rows.Add(item);
             }
         }
