@@ -111,11 +111,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ServiceName,
             this.ServiceState});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(260, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(260, 148);
             this.dataGridView1.TabIndex = 6;
             // 
             // ServiceName
@@ -177,8 +178,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.78114F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.21886F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
@@ -195,7 +196,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.buttonStartAll);
             this.flowLayoutPanel2.Controls.Add(this.buttonStopAll);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(269, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(300, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(124, 58);
             this.flowLayoutPanel2.TabIndex = 12;
@@ -231,7 +232,6 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceState;
         private System.Windows.Forms.Button buttonStopAll;
@@ -240,6 +240,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
