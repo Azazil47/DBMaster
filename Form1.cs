@@ -27,7 +27,7 @@ namespace DBMaster
         private void button2_Click(object sender, EventArgs e) //Status
         {
             //serv.Refresh();
-            // MessageBox.Show(serv.Status().ToString());
+            MessageBox.Show(ServiceClass.Status("FirebirdServerDefaultInstance").ToString());
 
         
         }
@@ -35,7 +35,7 @@ namespace DBMaster
         private void button1_Click(object sender, EventArgs e)
         {
             ServiceClass.Stop("FirebirdServerDefaultInstance");
-            dataGridView1.Refresh();
+           // dataGridView1.Refresh();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,10 +43,10 @@ namespace DBMaster
             //LoadService();
             // listService.Add(new string[2] { "FirebirdServerDefaultInstance", $"{ServiceClass.Status("FirebirdServerDefaultInstance")}" });
             // listService.Add(new string[2] { "spooler", $"{ServiceClass.Status("spooler")}"});
-           /* foreach (String[] item in listService)
+            foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }*/
+            }
 
 
 
@@ -55,7 +55,7 @@ namespace DBMaster
         private void button3_Click(object sender, EventArgs e)
         {
             ServiceClass.Start("FirebirdServerDefaultInstance");
-            dataGridView1.Refresh();
+           // dataGridView1.Refresh();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
