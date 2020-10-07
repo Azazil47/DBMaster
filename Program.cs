@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.ServiceProcess;
 using System.IO;
-using System.Threading;
+
 
 namespace DBMaster
 {
@@ -48,24 +47,7 @@ namespace DBMaster
             }
         }
 
-      /* public static void greedUpdate()
-        {
-            MessageBox.Show("Thread");
-            while (true)
-            {
-               /* foreach (String[] item in listService)
-                {
-                    item[1] = ServiceClass.Status(item[0]);
-                }
-                myForm.dataGridView1.Rows.Clear();
-                foreach (String[] item in listService)
-                {
-                    myForm.dataGridView1.Rows.Add(item);
-                }*/
-                
-            
-        
-
+                   
 
         /// <summary>
         /// Главная точка входа для приложения.
