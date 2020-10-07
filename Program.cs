@@ -31,6 +31,8 @@ namespace DBMaster
                 MessageBox.Show("File is bad");
             }
         }
+
+        
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>

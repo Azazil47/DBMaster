@@ -38,6 +38,7 @@
             this.ServiceState = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonStopAll = new System.Windows.Forms.Button();
             this.textBoxLog = new System.Windows.Forms.TextBox();
+            this.buttonStartAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,12 +129,13 @@
             // 
             // buttonStopAll
             // 
-            this.buttonStopAll.Location = new System.Drawing.Point(344, 76);
+            this.buttonStopAll.Location = new System.Drawing.Point(344, 115);
             this.buttonStopAll.Name = "buttonStopAll";
             this.buttonStopAll.Size = new System.Drawing.Size(98, 23);
             this.buttonStopAll.TabIndex = 7;
             this.buttonStopAll.Text = "Остановить все";
             this.buttonStopAll.UseVisualStyleBackColor = true;
+            this.buttonStopAll.Click += new System.EventHandler(this.buttonStopAll_Click);
             // 
             // textBoxLog
             // 
@@ -143,11 +145,22 @@
             this.textBoxLog.Size = new System.Drawing.Size(432, 55);
             this.textBoxLog.TabIndex = 8;
             // 
+            // buttonStartAll
+            // 
+            this.buttonStartAll.Location = new System.Drawing.Point(344, 76);
+            this.buttonStartAll.Name = "buttonStartAll";
+            this.buttonStartAll.Size = new System.Drawing.Size(98, 23);
+            this.buttonStartAll.TabIndex = 9;
+            this.buttonStartAll.Text = "Запустить все";
+            this.buttonStartAll.UseVisualStyleBackColor = true;
+            this.buttonStartAll.Click += new System.EventHandler(this.buttonStartAll_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 475);
+            this.Controls.Add(this.buttonStartAll);
             this.Controls.Add(this.textBoxLog);
             this.Controls.Add(this.buttonStopAll);
             this.Controls.Add(this.dataGridView1);
@@ -177,6 +190,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceState;
         private System.Windows.Forms.Button buttonStopAll;
         public System.Windows.Forms.TextBox textBoxLog;
+        private System.Windows.Forms.Button buttonStartAll;
     }
 }
 

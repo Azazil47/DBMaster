@@ -77,14 +77,34 @@ namespace DBMaster
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            /* BinaryFormatter formatter = new BinaryFormatter();
-             using (FileStream fs = new FileStream("Services.dat", FileMode.OpenOrCreate))
-             {
-                 ServiceClass serv = (ServiceClass)formatter.Deserialize(fs);
-                 MessageBox.Show("DeSerializeble is good");
+            dataGridView1.Rows.Clear();
+            foreach (String[] item in Program.listService)
+            {
 
+                dataGridView1.Rows.Add(item);
+            }
+        }
 
-             }*/
+        private void buttonStopAll_Click(object sender, EventArgs e)
+        {
+            ServiceClass.StopAll(Program.listService);
+            dataGridView1.Rows.Clear();
+            foreach (String[] item in Program.listService)
+            {
+                
+                dataGridView1.Rows.Add(item);
+            }
+        }
+
+        private void buttonStartAll_Click(object sender, EventArgs e)
+        {
+            ServiceClass.StartAll(Program.listService);
+            dataGridView1.Rows.Clear();
+            foreach (String[] item in Program.listService)
+            {
+                
+                dataGridView1.Rows.Add(item);
+            }
         }
     }
 }
