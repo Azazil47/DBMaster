@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
-
+using System.Threading;
 
 namespace DBMaster
 {
@@ -23,13 +23,7 @@ namespace DBMaster
             InitializeComponent();
         }
 
-        /*public void gridUdate()
-        {
-            foreach (Stream[] item in Program.listService)
-            {
-
-            }
-        }*/
+        
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
@@ -49,7 +43,8 @@ namespace DBMaster
                 dataGridView1.Rows.Add(item);
             }
 
-
+           /* Thread gridThread = new Thread(new ThreadStart(Program.greedUpdate));
+            gridThread.Start();*/////ПОТОК
 
         }
 
@@ -72,24 +67,24 @@ namespace DBMaster
         {
             ServiceClass.StopAll(Program.listService);
             //Program.LoadService();
-            Program.RefreshList();
+           /* Program.greedUpdate();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }
+            }*/
         }
 
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
             ServiceClass.StartAll(Program.listService);
-            //Program.LoadService();
-            Program.RefreshList();
+           /*Program.LoadService();
+            Program.greedUpdate();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }
+            }*/
         }
     }
 }

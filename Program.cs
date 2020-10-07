@@ -4,10 +4,11 @@ using System.Linq;
 using System.Windows.Forms;
 using System.ServiceProcess;
 using System.IO;
+using System.Threading;
 
 namespace DBMaster
 {
-    
+
     static class Program
     {
         public static Form1 myForm;
@@ -21,7 +22,7 @@ namespace DBMaster
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listService.Add(new string[2] { line, ServiceClass.Status(line)});
+                        listService.Add(new string[2] { line, ServiceClass.Status(line) });
                     }
                 }
             }
@@ -39,20 +40,39 @@ namespace DBMaster
             }
         }
 
-        
+        public static void greedUpdate()
+        {
+            MessageBox.Show("Thread");
+            while (true)
+            {
+               /* foreach (String[] item in listService)
+                {
+                    item[1] = ServiceClass.Status(item[0]);
+                }
+                myForm.dataGridView1.Rows.Clear();
+                foreach (String[] item in listService)
+                {
+                    myForm.dataGridView1.Rows.Add(item);
+                }*/
+                
+            }
+        }
+
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        
+
         static void Main()
         {
-            
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             LoadService();
             myForm = new Form1();
             Application.Run(myForm);
-    }
+            
+        }
     }
 }
