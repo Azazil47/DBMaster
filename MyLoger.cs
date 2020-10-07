@@ -6,7 +6,7 @@ namespace DBMaster
 {
     static class MyLoger
     {
-        
+
         public enum MyEnum
         {
             ERROR, INFO, WARNING
@@ -19,8 +19,8 @@ namespace DBMaster
             {
                 DateTime date = DateTime.Now;
                 StreamWriter writer = new StreamWriter($"Log\\{date.ToString("dd.MM.yyyy")}.log", true);
-                writer.WriteLine($"{date.ToString("hh:mm:ss")}\t{line}");
-               
+                writer.WriteLine($"{date.ToString("HH:mm:ss")}\t{line}");
+
 
 
                 writer.Close();

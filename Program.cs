@@ -32,13 +32,13 @@ namespace DBMaster
             }
         }
 
-      /*  public static void RefreshList()
+        public static void RefreshList()
         {
             foreach (String[] item in listService)
             {
                 item[1] = ServiceClass.Status(item[0]);
             }
-        }*/
+        }
 
         public static void greedUpdate()
         {
@@ -48,7 +48,7 @@ namespace DBMaster
             }
         }
 
-        public static void greedUpdate()
+      /*  public static void greedUpdate()
         {
             MessageBox.Show("Thread");
             while (true)
@@ -63,8 +63,8 @@ namespace DBMaster
                     myForm.dataGridView1.Rows.Add(item);
                 }*/
                 
-            }
-        }
+            
+        
 
 
         /// <summary>
