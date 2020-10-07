@@ -42,9 +42,18 @@ namespace DBMaster
 
         public static void greedUpdate()
         {
-            
+            foreach (String[] item in listService)
             {
-                foreach (String[] item in listService)
+                item[1] = ServiceClass.Status(item[0]);
+            }
+        }
+
+        public static void greedUpdate()
+        {
+            MessageBox.Show("Thread");
+            while (true)
+            {
+               /* foreach (String[] item in listService)
                 {
                     item[1] = ServiceClass.Status(item[0]);
                 }
@@ -52,7 +61,7 @@ namespace DBMaster
                 foreach (String[] item in listService)
                 {
                     myForm.dataGridView1.Rows.Add(item);
-                }
+                }*/
                 
             }
         }

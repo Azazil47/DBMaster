@@ -43,8 +43,8 @@ namespace DBMaster
                 dataGridView1.Rows.Add(item);
             }
 
-          /* Thread gridThread = new Thread(new ThreadStart(Program.greedUpdate));
-            gridThread.Start();*/
+           /* Thread gridThread = new Thread(new ThreadStart(Program.greedUpdate));
+            gridThread.Start();*/////ПОТОК
 
         }
 
@@ -65,29 +65,26 @@ namespace DBMaster
 
         private void buttonStopAll_Click(object sender, EventArgs e)
         {
-           
-              
-            
-           ServiceClass.StopAll(Program.listService);
-           Program.LoadService();
-           Program.greedUpdate();
+            ServiceClass.StopAll(Program.listService);
+            //Program.LoadService();
+           /* Program.greedUpdate();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }
+            }*/
         }
 
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
             ServiceClass.StartAll(Program.listService);
-           Program.LoadService();
+           /*Program.LoadService();
             Program.greedUpdate();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }
+            }*/
         }
     }
 }
