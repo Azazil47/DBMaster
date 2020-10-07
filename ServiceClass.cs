@@ -13,7 +13,7 @@ public static class ServiceClass // : ServiceController
         ServiceController service = new ServiceController(name);
         try
         {
-            if (!service.Status.Equals("Running"))
+            if (!Status(name).Equals("Running"))
             {
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
@@ -39,7 +39,7 @@ public static class ServiceClass // : ServiceController
         ServiceController service = new ServiceController(name);
         try
         {
-            if (!service.Status.Equals("Stopped"))
+            if (!Status(name).Equals("Stopped"))
             {
                 service.Stop();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
