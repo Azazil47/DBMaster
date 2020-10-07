@@ -13,12 +13,12 @@ public static class ServiceClass // : ServiceController
         ServiceController service = new ServiceController(name);
         try
         {
-            if (Status(name).Equals("Stopped"))
+            if (!Status(name).Equals("Running"))
             {
 
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
-                Program.myForm.textBoxLog.Text += $"{ DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\": ЗАПУСКАЕТСЯ\r\n";
+                Program.myForm.textBoxLog.Text += $"{ DateTime.Now.ToString("hh: mm: ss")} - {MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName} Статус: ЗАПУСКАЕТСЯ\r\n";
                 Thread.Sleep(1000);
                 service.Refresh();
             }
@@ -29,14 +29,13 @@ public static class ServiceClass // : ServiceController
             }
             else
             {
-                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{name}\" не может быть запущена");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" не может быть запущена\r\n";
+                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба {service.DisplayName} уже запущена");
             }
         }
         catch (Exception)
         {
-            MessageBox.Show($"\"{service.DisplayName}\" cлужба не смогла поднятся с колен");
-            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка запустить службу \"{service.DisplayName}\" привела к страшным последствиям");
+            MessageBox.Show($"{service.DisplayName} cлужба не смогла поднятся с колен");
+            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка запустить службу {service.DisplayName} привела к страшным последствиям");
         }
 
 
@@ -47,11 +46,11 @@ public static class ServiceClass // : ServiceController
         ServiceController service = new ServiceController(name);
         try
         {
-            if (Status(name).Equals("Running"))
+            if (!Status(name).Equals("Stopped"))
             {
                 service.Stop();
-                MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба \"{service.DisplayName}\"\tСтатус: ОСТАНАВЛИВАЕТСЯ");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\" Статус: ОСТАНАВЛИВАЕТСЯ\r\n";
+                MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ОСТАНАВЛИВАЕТСЯ");
+                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("hh: mm: ss")} - {MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName} Статус: ОСТАНАВЛИВАЕТСЯ\r\n";
                 Thread.Sleep(1000);
                 service.Refresh();
             }
@@ -62,14 +61,13 @@ public static class ServiceClass // : ServiceController
             }
             else
             {
-                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{name}\" не может быть остановлена");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" не может быть остановлена\r\n";
+                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба {service.DisplayName} уже остановлена");
             }
         }
         catch (Exception)
         {
-            MessageBox.Show($"\"{service.DisplayName}\" cлужба не смогла остановится");
-            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка остановить службу \"{service.DisplayName}\" привела к страшным последствиям");
+            MessageBox.Show($"{service.DisplayName} cлужба не смогла остановится");
+            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка остановить службу {service.DisplayName} привела к страшным последствиям");
         }
 
     }
