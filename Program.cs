@@ -31,14 +31,6 @@ namespace DBMaster
             }
         }
 
-        public static void RefreshList()
-        {
-            foreach (String[] item in listService)
-            {
-                item[1] = ServiceClass.Status(item[0]);
-            }
-        }
-
         public static void greedUpdate()
         {
             foreach (String[] item in listService)
