@@ -12,23 +12,27 @@ public static class ServiceClass // : ServiceController
         ServiceController service = new ServiceController(name);
         try
         {
-            if (Status(name).Equals("Stopped"))
+            if(service.Status.Equals(ServiceControllerStatus.Stopped))
             {
-
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
-                Program.myForm.textBoxLog.Text += $"{ DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\": ЗАПУСКАЕТСЯ\r\n";
-                service.Refresh();
-            }
-            else if ((Status(name).Equals("Running")) || (Status(name).Equals("StartPending")))
+                Program.myForm.textBoxLog.Text += 
+                    $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\": ЗАПУСКАЕТСЯ\r\n";
+                while(true)
+                {
+                    service.Refresh();
+                    if(service.Status == ServiceControllerStatus.Running)
+                    {
+                        MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУЩЕНА");
+                        Program.myForm.textBoxLog.Text +=
+                            $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\": ЗАПУЩЕНА\r\n";
+                    }
+                }
+            }else
             {
                 MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{service.DisplayName}\" не может быть запущена");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{service.DisplayName}\" не может быть запущена\r\n";
-            }
-            else
-            {
-                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{name}\" не может быть запущена");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" не может быть запущена\r\n";
+                Program.myForm.textBoxLog.Text += 
+                    $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{service.DisplayName}\" не может быть запущена\r\n";
             }
         }
         catch (Exception)
