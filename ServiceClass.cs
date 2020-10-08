@@ -10,6 +10,7 @@ public static class ServiceClass // : ServiceController
     public static void Start(String name)
     {
         ServiceController service = new ServiceController(name);
+        
         try
         {
             if(service.Status.Equals(ServiceControllerStatus.Stopped))
@@ -26,22 +27,30 @@ public static class ServiceClass // : ServiceController
                         MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУЩЕНА");
                         Program.myForm.textBoxLog.Text +=
                             $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\": ЗАПУЩЕНА\r\n";
+                        break;
                     }
                 }
             }else
             {
-                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{service.DisplayName}\" не может быть запущена");
+                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{name}\" не может быть запущена");
                 Program.myForm.textBoxLog.Text += 
-                    $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{service.DisplayName}\" не может быть запущена\r\n";
+                    $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" не может быть запущена\r\n";
             }
         }
         catch (Exception)
         {
-            MessageBox.Show($"\"{service.DisplayName}\" cлужба не смогла поднятся с колен");
-            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка запустить службу \"{service.DisplayName}\" привела к страшным последствиям");
+            DialogResult dialog = MessageBox.Show($"\"{name}\" с этой службой, что-то не так.","Предупреждение",MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка запустить службу \"{name}\" привела к страшным последствиям");
+            Program.myForm.textBoxLog.Text +=
+                    $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" \r\n";
+            if(dialog == DialogResult.Yes)
+            {
+                //УДАЛИТЬ службы из файла конфигурации
+            } else
+            {
+                //ОСТАВИТЬ ВСЕ КАК ЕСТЬ
+            }
         }
-
-
     }
 
     public static void Stop(String name)
