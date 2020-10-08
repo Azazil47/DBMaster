@@ -231,15 +231,15 @@
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceState;
         private System.Windows.Forms.Button buttonStopAll;
         public System.Windows.Forms.TextBox textBoxLog;
         private System.Windows.Forms.Button buttonStartAll;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

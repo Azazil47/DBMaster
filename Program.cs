@@ -36,7 +36,20 @@ namespace DBMaster
             foreach (String[] item in listService)
             {
                 item[1] = ServiceClass.Status(item[0]);
+
             }
+            
+            Invoke((MethodInvoker)delegate () 
+            {
+                myForm.dataGridView1.Rows.Clear();
+                foreach (String[] item in Program.listService)
+                {
+                    myForm.dataGridView1.Rows.Add(item);
+                }
+            });
+            
+            
+            
         }
 
                    

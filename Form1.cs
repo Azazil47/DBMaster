@@ -69,12 +69,13 @@ namespace DBMaster
         {
             ServiceClass.StartAll(Program.listService);
             
-            Program.greedUpdate();
+            /*Program.greedUpdate();
             dataGridView1.Rows.Clear();
             foreach (String[] item in Program.listService)
             {
                 dataGridView1.Rows.Add(item);
-            }
+            }*/
+
         }
     }
 }
