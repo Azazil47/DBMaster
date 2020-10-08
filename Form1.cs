@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows.Forms;
 
 
@@ -14,11 +15,26 @@ namespace DBMaster
             InitializeComponent();
         }
 
-        
+        public void greedUpdate()
+        {
+            foreach (String[] item in Program.listService)
+            {
+                item[1] = ServiceClass.Status(item[0]);
+            }
+
+            Invoke((MethodInvoker)delegate ()
+            {
+                dataGridView1.Rows.Clear();
+                foreach (String[] item in Program.listService)
+                {
+                    dataGridView1.Rows.Add(item);
+                }
+            });
+        }
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
-
+            
         
         }
 
@@ -56,18 +72,21 @@ namespace DBMaster
         private void buttonStopAll_Click(object sender, EventArgs e)
         {
             ServiceClass.StopAll(Program.listService);
-            
-            Program.greedUpdate();
-            dataGridView1.Rows.Clear();
-            foreach (String[] item in Program.listService)
-            {
-                dataGridView1.Rows.Add(item);
-            }
+            Thread thread = new Thread(new ThreadStart(greedUpdate));
+            thread.Start();
+            /* Program.greedUpdate();
+             dataGridView1.Rows.Clear();
+             foreach (String[] item in Program.listService)
+             {
+                 dataGridView1.Rows.Add(item);
+             }*/
         }
 
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
             ServiceClass.StartAll(Program.listService);
+            Thread thread = new Thread(new ThreadStart(greedUpdate));
+            thread.Start();
             
             /*Program.greedUpdate();
             dataGridView1.Rows.Clear();
