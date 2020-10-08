@@ -18,7 +18,6 @@ public static class ServiceClass // : ServiceController
                 service.Start();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба {service.DisplayName}\tСтатус: ЗАПУСКАЕТСЯ");
                 Program.myForm.textBoxLog.Text += $"{ DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\": ЗАПУСКАЕТСЯ\r\n";
-                Thread.Sleep(1000);
                 service.Refresh();
             }
             else if ((Status(name).Equals("Running")) || (Status(name).Equals("StartPending")))
@@ -51,7 +50,6 @@ public static class ServiceClass // : ServiceController
                 service.Stop();
                 MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба \"{service.DisplayName}\"\tСтатус: ОСТАНАВЛИВАЕТСЯ");
                 Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\" Статус: ОСТАНАВЛИВАЕТСЯ\r\n";
-                Thread.Sleep(1000);
                 service.Refresh();
             }
             else if ((Status(name).Equals("Stopped")) || (Status(name).Equals("StopPending")))

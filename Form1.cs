@@ -17,16 +17,12 @@ namespace DBMaster
 
         public void greedUpdate()
         {
-            foreach (String[] item in Program.listService)
-            {
-                item[1] = ServiceClass.Status(item[0]);
-            }
-
             Invoke((MethodInvoker)delegate ()
             {
                 dataGridView1.Rows.Clear();
                 foreach (String[] item in Program.listService)
                 {
+                    item[1] = ServiceClass.Status(item[0]);
                     dataGridView1.Rows.Add(item);
                 }
             });
