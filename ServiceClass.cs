@@ -41,7 +41,7 @@ public static class ServiceClass // : ServiceController
         catch (Exception)
         {
            
-            DialogResult dialog = MessageBox.Show($"Со этой службой \"{name}\", что-то не так. \r\n Удалить ее?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            MessageBox.Show($"Со этой службой \"{name}\", что-то не так.", "Предупреждение");
             MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
             MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
 
@@ -82,7 +82,7 @@ public static class ServiceClass // : ServiceController
         }
         catch (Exception)
         {
-            DialogResult dialog = MessageBox.Show($"Со этой службой \"{name}\", что-то не так. \r\n Удалить ее?", "Предупреждение", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            MessageBox.Show($"Со этой службой \"{name}\", что-то не так.", "Предупреждение");
             MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
             MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
         }
