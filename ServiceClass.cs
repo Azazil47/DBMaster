@@ -111,7 +111,7 @@ public static class ServiceClass // : ServiceController
     }
 
 
-    public static String Status(String name)
+  /*  public static String Status(String name) //ПОСМОТРЕТЬ МОЖНО ЛИ УДАЛИТЬ ЭТОТ МЕТОД
     {
         ServiceController service = new ServiceController(name);
         try
@@ -124,7 +124,7 @@ public static class ServiceClass // : ServiceController
         {
             return "Служба не найдена";
         }
-    }
+    }*/
 
     public static void Refresh(String name)
     {

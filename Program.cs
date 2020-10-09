@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
-
+using System.ServiceProcess;
 
 namespace DBMaster
 {
@@ -21,13 +21,13 @@ namespace DBMaster
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listService.Add(new string[2] { line, ServiceClass.Status(line) });
+                        listService.Add(new string[2] { line, new ServiceController(line).Status.ToString() });
                     }
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("File is bad");
+                MessageBox.Show("Не удалось загрузить некоторые службы из файла Services.ini");
             }
         }
 

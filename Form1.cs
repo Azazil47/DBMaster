@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceProcess;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace DBMaster
                 dataGridView1.Rows.Clear();
                 foreach (String[] item in Program.listService)
                 {
-                    item[1] = ServiceClass.Status(item[0]);
+                    item[1] = new ServiceController(item[0]).Status.ToString();
                     dataGridView1.Rows.Add(item);
                 }
             });
