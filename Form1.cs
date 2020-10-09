@@ -30,8 +30,8 @@ namespace DBMaster
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
-            
-        
+           
+
         }
 
         private void button1_Click(object sender, EventArgs e)
