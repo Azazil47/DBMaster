@@ -66,7 +66,7 @@ public static class ServiceClass // : ServiceController
                 {
                     Thread.Sleep(1000);
                     service.Refresh();
-                    if (sec-- == 10) break;
+                    if (sec-- == 0) break;
                 }
                 if (sec > 0)
                 { //GOOD
@@ -83,7 +83,6 @@ public static class ServiceClass // : ServiceController
                 MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
                 MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
             }
-            
         }
         catch (Exception)
         {

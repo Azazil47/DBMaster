@@ -21,7 +21,18 @@ namespace DBMaster
                     String line;
                     while ((line = sr.ReadLine()) != null)
                     {
-                        listService.Add(new string[2] { line, new ServiceController(line).Status.ToString() });
+                        ServiceController serv = null ; 
+                        try
+                        {
+                            serv = new ServiceController(line);
+                            listService.Add(new string[2] { line, serv.Status.ToString() });
+                            serv.Status.ToString();
+                        }
+                        catch (Exception)
+                        {
+                            MessageBox.Show($"Не корректная служба \"{line}\" будет исключена из списка служб");
+                        }
+                        
                     }
                 }
             }
