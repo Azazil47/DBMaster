@@ -58,22 +58,24 @@ public static class ServiceClass // : ServiceController
         ServiceController service = new ServiceController(name);
         try
         {
-            if (Status(name).Equals("Running"))
+            Boolean isBreack = false;
+            service.Start();
+            while (!service.Status.Equals(ServiceControllerStatus.Running))
             {
-                service.Stop();
-                MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба \"{service.DisplayName}\"\tСтатус: ОСТАНАВЛИВАЕТСЯ");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\" Статус: ОСТАНАВЛИВАЕТСЯ\r\n";
+                int timeStop = 0;
+                Thread.Sleep(1000);
                 service.Refresh();
+                isBreack = (service.Status.Equals(ServiceControllerStatus.Running) ? true : false);
+                timeStop++;
+                if (timeStop == 10) break;
             }
-            else if ((Status(name).Equals("Stopped")) || (Status(name).Equals("StopPending")))
+            if (!isBreack)
             {
-                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{service.DisplayName}\" не может быть остановлена");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{service.DisplayName}\" не может быть остановлена\r\n";
+                //GOOD
             }
             else
             {
-                MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{name}\" не может быть остановлена");
-                Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" не может быть остановлена\r\n";
+                //FAILT
             }
         }
         catch (Exception)
@@ -81,6 +83,25 @@ public static class ServiceClass // : ServiceController
             MessageBox.Show($"\"{service.DisplayName}\" cлужба не смогла остановится");
             MyLoger.write($"{MyLoger.MyEnum.ERROR}\t Попытка остановить службу \"{service.DisplayName}\" привела к страшным последствиям");
         }
+        /* if (Status(name).Equals("Running"))
+         {
+             service.Stop();
+             MyLoger.write($"{MyLoger.MyEnum.INFO}\tСлужба \"{service.DisplayName}\"\tСтатус: ОСТАНАВЛИВАЕТСЯ");
+             Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.INFO} Служба \"{service.DisplayName}\" Статус: ОСТАНАВЛИВАЕТСЯ\r\n";
+             service.Refresh();
+         }
+         else if ((Status(name).Equals("Stopped")) || (Status(name).Equals("StopPending")))
+         {
+             MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{service.DisplayName}\" не может быть остановлена");
+             Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{service.DisplayName}\" не может быть остановлена\r\n";
+         }
+         else
+         {
+             MyLoger.write($"{MyLoger.MyEnum.WARNING}\tСлужба \"{name}\" не может быть остановлена");
+             Program.myForm.textBoxLog.Text += $"{DateTime.Now.ToString("HH:mm:ss")} - {MyLoger.MyEnum.WARNING} Служба \"{name}\" не может быть остановлена\r\n";
+         }*/
+
+
 
     }
 
