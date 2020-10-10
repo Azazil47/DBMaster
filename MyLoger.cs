@@ -16,7 +16,6 @@ namespace DBMaster
             lvl.Add(-1, MyEnum.ERROR);
             lvl.Add(0, MyEnum.INFO);
             lvl.Add(1, MyEnum.WARNING);
-            
         }
         public static Enum getlvl(int i)
         {

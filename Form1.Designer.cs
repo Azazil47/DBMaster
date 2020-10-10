@@ -115,7 +115,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(260, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(238, 146);
             this.dataGridView1.TabIndex = 6;
             // 
             // ServiceName
@@ -178,9 +178,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.78114F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.21886F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.48502F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.51499F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 434F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -196,9 +196,9 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.buttonStartAll);
             this.flowLayoutPanel2.Controls.Add(this.buttonStopAll);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(269, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(247, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(124, 58);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(117, 58);
             this.flowLayoutPanel2.TabIndex = 12;
             // 
             // Form1
@@ -214,7 +214,7 @@
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "DBMaster";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);

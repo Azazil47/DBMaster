@@ -8,9 +8,6 @@ namespace DBMaster
 {
     public partial class Form1 : Form
     {
-        
-        
-        
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +28,6 @@ namespace DBMaster
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
-           
 
         }
 
@@ -46,9 +42,6 @@ namespace DBMaster
             {
                 dataGridView1.Rows.Add(item);
             }
-
-           
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -81,9 +74,11 @@ namespace DBMaster
 
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
-            ServiceClass.StartAll(Program.listService);
-            Thread thread = new Thread(new ThreadStart(greedUpdate));
-            thread.Start();
+            Thread threadStart = new Thread(new ThreadStart(ServiceClass.StartAll));
+            threadStart.Start();
+            //ServiceClass.StartAll(Program.listService);
+            //Thread thread = new Thread(new ThreadStart(greedUpdate));
+            //thread.Start();
             
             /*Program.greedUpdate();
             dataGridView1.Rows.Clear();
@@ -91,7 +86,6 @@ namespace DBMaster
             {
                 dataGridView1.Rows.Add(item);
             }*/
-
         }
     }
 }

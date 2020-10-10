@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 public static class ServiceClass // : ServiceController
 {
+    public delegate void printlog();
     public static void Start(String name)
     {
         ServiceController service = new ServiceController(name);
@@ -40,11 +41,9 @@ public static class ServiceClass // : ServiceController
         }
         catch (Exception)
         {
-           
             MessageBox.Show($"Со этой службой \"{name}\", что-то не так.", "Предупреждение");
             MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
             MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
-
         }
         
     }
@@ -96,9 +95,10 @@ public static class ServiceClass // : ServiceController
         }
     }
 
-    public static void StartAll(List<String[]> list)
+    public static void StartAll()
     {
-        foreach (String[] item in list)
+
+        foreach (String[] item in Program.listService)
         {
             Start(item[0]);
         }
