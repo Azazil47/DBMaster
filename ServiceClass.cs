@@ -23,6 +23,7 @@ public static class ServiceClass // : ServiceController
                     service.Refresh();
                     if (sec-- == 0) break;
                 }
+                Program.myForm.greedUpdate();
                 if (sec > 0)
                 { //GOOD
                     MyLoger.writeFile(0, "служба", service.DisplayName, service.Status);
@@ -64,7 +65,7 @@ public static class ServiceClass // : ServiceController
                     service.Refresh();
                     if (sec-- == 0) break;
                 }
-                
+                Program.myForm.greedUpdate();
                 if (sec > 0)
                 { //GOOD
                     MyLoger.writeFile(0, "служба", service.DisplayName, service.Status);
