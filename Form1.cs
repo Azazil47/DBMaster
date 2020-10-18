@@ -8,11 +8,15 @@ namespace DBMaster
 {
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
         }
-
+        public void pressStart()
+        {
+            ServiceClass.StopAll(Program.listService);
+        }
         public void greedUpdate()
         {
             Invoke((MethodInvoker)delegate ()
@@ -61,9 +65,15 @@ namespace DBMaster
 
         private void buttonStopAll_Click(object sender, EventArgs e)
         {
-            ServiceClass.StopAll(Program.listService);
+            Invoke((MethodInvoker)delegate ()
+            {
+                Thread thread1 = new Thread(new ThreadStart(pressStart));
+                thread1.Start();
+                
+            });
+               /* ServiceClass.StopAll(Program.listService);
             Thread thread = new Thread(new ThreadStart(greedUpdate));
-            thread.Start();
+            thread.Start();*/
             /* Program.greedUpdate();
              dataGridView1.Rows.Clear();
              foreach (String[] item in Program.listService)
@@ -74,6 +84,17 @@ namespace DBMaster
 
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new MethodInvoker(delegate
+                {
+                    //textBox1.Text += text + "\r\n";
+                }));
+            }
+            else
+            {
+                //textBox1.Text += text + "\r\n";
+            }
             Thread threadStart = new Thread(new ThreadStart(ServiceClass.StartAll));
             threadStart.Start();
             //ServiceClass.StartAll(Program.listService);

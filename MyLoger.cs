@@ -67,7 +67,7 @@ namespace DBMaster
             }
             catch (Exception)
             {
-                MessageBox.Show("Не удалось записать файл TextBox");
+                MessageBox.Show("Не удалось отобразить лог");
             }
         }
 
@@ -80,7 +80,7 @@ namespace DBMaster
             }
             catch (Exception)
             {
-                MessageBox.Show("Не удалось записать файл TextBox");
+                MessageBox.Show("Не удалось отобразить лог");
             }
         }
     }

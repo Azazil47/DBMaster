@@ -7,7 +7,6 @@ using System.Windows.Forms;
 
 public static class ServiceClass // : ServiceController
 {
-    public delegate void printlog();
     public static void Start(String name)
     {
         ServiceController service = new ServiceController(name);
@@ -91,6 +90,8 @@ public static class ServiceClass // : ServiceController
     {
         foreach (String[] item in list)
         {
+            Thread thread = new Thread(Stop, item[0]);
+            thread.Start(item[0]);
             Stop(item[0]);
         }
     }
