@@ -96,21 +96,16 @@ public static class ServiceClass // : ServiceController
         {
             Thread thread = new Thread(Stop);
             thread.Start(item[0]);
-           // Stop(item[0]);
         }
     }
 
     public static void StartAll(List<String[]> list)
     {
-
         foreach (String[] item in list)
         {
             Thread thread = new Thread(Start);
             thread.Start(item[0]);
-            // Stop(item[0]);
         }
-
     }
-
 }
 

@@ -64,7 +64,6 @@ namespace DBMaster
             {
                 DateTime date = DateTime.Now;
                 Program.myForm.setTextBox($"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n");
-                //Program.myForm.textBoxLog.Text += $"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n";
             }
             catch (Exception)
             {
@@ -78,7 +77,6 @@ namespace DBMaster
             {
                 DateTime date = DateTime.Now;
                 Program.myForm.setTextBox($"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n");
-                //Program.myForm.textBoxLog.Text += $"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n";
             }
             catch (Exception)
             {

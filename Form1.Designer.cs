@@ -56,7 +56,6 @@
             this.buttonStop.TabIndex = 0;
             this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
-            this.buttonStop.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonStatus
             // 
@@ -66,7 +65,6 @@
             this.buttonStatus.TabIndex = 1;
             this.buttonStatus.Text = "Status";
             this.buttonStatus.UseVisualStyleBackColor = true;
-            this.buttonStatus.Click += new System.EventHandler(this.button2_Click);
             // 
             // buttonStart
             // 
@@ -76,7 +74,6 @@
             this.buttonStart.TabIndex = 3;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -96,7 +93,6 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // dataGridView1
             // 
