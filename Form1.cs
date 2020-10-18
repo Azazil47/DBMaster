@@ -8,14 +8,19 @@ namespace DBMaster
 {
     public partial class Form1 : Form
     {
-       
-        public Form1()
+       public void setTextBox(String line) //Метод вывода log на экран
         {
-            InitializeComponent();
-        }
-        public void pressStart()
-        {
-            ServiceClass.StopAll(Program.listService);
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new MethodInvoker(delegate
+                {
+                    textBoxLog.Text += line;
+                }));
+            }
+            else
+            {
+                textBoxLog.Text += line;
+            }
         }
         public void greedUpdate()
         {
@@ -29,6 +34,15 @@ namespace DBMaster
                 }
             });
         }
+        public Form1()
+        {
+            InitializeComponent();
+        }
+       /* public void pressStart()
+        {
+            ServiceClass.StopAll(Program.listService);
+        }*/
+        
 
         private void button2_Click(object sender, EventArgs e) //Status
         {
@@ -65,15 +79,16 @@ namespace DBMaster
 
         private void buttonStopAll_Click(object sender, EventArgs e)
         {
-            Invoke((MethodInvoker)delegate ()
+            ServiceClass.StopAll(Program.listService);
+            /*Invoke((MethodInvoker)delegate ()
             {
                 Thread thread1 = new Thread(new ThreadStart(pressStart));
                 thread1.Start();
                 
-            });
-               /* ServiceClass.StopAll(Program.listService);
-            Thread thread = new Thread(new ThreadStart(greedUpdate));
-            thread.Start();*/
+            });*/
+            /* ServiceClass.StopAll(Program.listService);
+         Thread thread = new Thread(new ThreadStart(greedUpdate));
+         thread.Start();*/
             /* Program.greedUpdate();
              dataGridView1.Rows.Clear();
              foreach (String[] item in Program.listService)
@@ -84,19 +99,9 @@ namespace DBMaster
 
         private void buttonStartAll_Click(object sender, EventArgs e)
         {
-            if (this.InvokeRequired)
-            {
-                this.BeginInvoke(new MethodInvoker(delegate
-                {
-                    //textBox1.Text += text + "\r\n";
-                }));
-            }
-            else
-            {
-                //textBox1.Text += text + "\r\n";
-            }
-            Thread threadStart = new Thread(new ThreadStart(ServiceClass.StartAll));
-            threadStart.Start();
+            ServiceClass.StartAll(Program.listService);
+           // Thread threadStart = new Thread(new ThreadStart(ServiceClass.StartAll));
+           // threadStart.Start();
             //ServiceClass.StartAll(Program.listService);
             //Thread thread = new Thread(new ThreadStart(greedUpdate));
             //thread.Start();

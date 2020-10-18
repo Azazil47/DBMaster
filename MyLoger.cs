@@ -37,9 +37,9 @@ namespace DBMaster
                 writer.WriteLine($"{date.ToString("HH:mm:ss") } - {getlvl(level)} Служба \"{name}\" - {stat}");
                 writer.Close();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                MessageBox.Show("Не удалось записать файл log");
+                MessageBox.Show(e.ToString());
             }
         }
 
@@ -63,7 +63,8 @@ namespace DBMaster
             try
             {
                 DateTime date = DateTime.Now;
-                Program.myForm.textBoxLog.Text += $"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n";
+                Program.myForm.setTextBox($"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n");
+                //Program.myForm.textBoxLog.Text += $"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n";
             }
             catch (Exception)
             {
@@ -76,7 +77,8 @@ namespace DBMaster
             try
             {
                 DateTime date = DateTime.Now;
-                Program.myForm.textBoxLog.Text += $"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n";
+                Program.myForm.setTextBox($"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n");
+                //Program.myForm.textBoxLog.Text += $"{date.ToString("HH:mm:ss")} - {getlvl(level)} Служба \"{name}\" - {stat} \r\n";
             }
             catch (Exception)
             {

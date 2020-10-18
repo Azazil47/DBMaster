@@ -7,8 +7,9 @@ using System.Windows.Forms;
 
 public static class ServiceClass // : ServiceController
 {
-    public static void Start(String name)
+    public static void Start(Object setname)
     {
+        String name = (String)setname;
         ServiceController service = new ServiceController(name);
         try
         {
@@ -47,8 +48,9 @@ public static class ServiceClass // : ServiceController
         
     }
 
-    public static void Stop(String name)
+    public static void Stop(Object setname)
     {
+        String name = (String)setname;
         ServiceController service = new ServiceController(name);
         try
         {
@@ -62,6 +64,7 @@ public static class ServiceClass // : ServiceController
                     service.Refresh();
                     if (sec-- == 0) break;
                 }
+                
                 if (sec > 0)
                 { //GOOD
                     MyLoger.writeFile(0, "служба", service.DisplayName, service.Status);
@@ -90,18 +93,20 @@ public static class ServiceClass // : ServiceController
     {
         foreach (String[] item in list)
         {
-            Thread thread = new Thread(Stop, item[0]);
+            Thread thread = new Thread(Stop);
             thread.Start(item[0]);
-            Stop(item[0]);
+           // Stop(item[0]);
         }
     }
 
-    public static void StartAll()
+    public static void StartAll(List<String[]> list)
     {
 
-        foreach (String[] item in Program.listService)
+        foreach (String[] item in list)
         {
-            Start(item[0]);
+            Thread thread = new Thread(Start);
+            thread.Start(item[0]);
+            // Stop(item[0]);
         }
 
     }
