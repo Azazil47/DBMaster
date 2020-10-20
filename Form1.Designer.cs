@@ -48,7 +48,7 @@
             this.BtBrowseSDP = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.LbCopySDP = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TbCopySDP = new System.Windows.Forms.TextBox();
             this.BtBrowseCopySDP = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -216,7 +216,7 @@
             this.tableLayoutPanel2.Controls.Add(this.TbPathSDP, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtBrowseSDP, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.LbCopySDP, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.TbCopySDP, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.BtBrowseCopySDP, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(370, 3);
@@ -274,14 +274,14 @@
             this.LbCopySDP.TabIndex = 3;
             this.LbCopySDP.Text = "Скопировать UNI_WORK2003.fdb в:";
             // 
-            // textBox1
+            // TbCopySDP
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(3, 66);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 24);
-            this.textBox1.TabIndex = 4;
+            this.TbCopySDP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TbCopySDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TbCopySDP.Location = new System.Drawing.Point(3, 66);
+            this.TbCopySDP.Name = "TbCopySDP";
+            this.TbCopySDP.Size = new System.Drawing.Size(313, 24);
+            this.TbCopySDP.TabIndex = 4;
             // 
             // BtBrowseCopySDP
             // 
@@ -342,7 +342,7 @@
         private System.Windows.Forms.Button BtBrowseSDP;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label LbCopySDP;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TbCopySDP;
         private System.Windows.Forms.Button BtBrowseCopySDP;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
