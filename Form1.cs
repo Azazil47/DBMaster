@@ -39,20 +39,33 @@ namespace DBMaster
             });
         }
 
-        public void pathSDPupdate(String path)
+        public void UpdatePathSDP(String path)
         {
-            pathSDP = path;
-            TbPathSDP.Text = pathSDP;
+            TbPathSDP.Text = path;
+        }
+        public String PathSDP
+        {
+            get
+            {
+                return pathSDP;
+            }
+            set
+            {
+                pathSDP = value;
+                UpdatePathSDP(value);
+            }
+            //pathSDP = path;
+            
         }
         public void chekSDPfile()
         {
             String path = @"C:\Data\Justice\UNI_WORK2003.fdb";
             if (File.Exists(path))
             {
-                pathSDPupdate(path);
+                PathSDP = path;
             } else
             {
-                pathSDPupdate("");
+                PathSDP = "";
             }
         }
         public Form1()
@@ -86,7 +99,8 @@ namespace DBMaster
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
-            pathSDPupdate(openFileDialog1.FileName);
+            PathSDP = openFileDialog1.FileName;
+            //pathSDPupdate(openFileDialog1.FileName);
         }
 
         private void BtBrowseCopySDP_Click(object sender, EventArgs e)
