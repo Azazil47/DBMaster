@@ -42,10 +42,15 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.LbPathSDP = new System.Windows.Forms.Label();
+            this.TbPathSDP = new System.Windows.Forms.TextBox();
+            this.BtBrowseSDP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonStop
@@ -179,7 +184,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 434F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -194,8 +199,57 @@
             this.flowLayoutPanel2.Controls.Add(this.buttonStopAll);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(247, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(117, 58);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(117, 61);
             this.flowLayoutPanel2.TabIndex = 12;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.59207F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.40792F));
+            this.tableLayoutPanel2.Controls.Add(this.LbPathSDP, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.TbPathSDP, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.BtBrowseSDP, 1, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(370, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.6087F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.3913F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(429, 148);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // LbPathSDP
+            // 
+            this.LbPathSDP.AutoSize = true;
+            this.LbPathSDP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LbPathSDP.Location = new System.Drawing.Point(3, 0);
+            this.LbPathSDP.Name = "LbPathSDP";
+            this.LbPathSDP.Size = new System.Drawing.Size(144, 15);
+            this.LbPathSDP.TabIndex = 0;
+            this.LbPathSDP.Text = "Путь к UNI_WORK2003.fdb";
+            // 
+            // TbPathSDP
+            // 
+            this.TbPathSDP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TbPathSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TbPathSDP.Location = new System.Drawing.Point(3, 18);
+            this.TbPathSDP.Name = "TbPathSDP";
+            this.TbPathSDP.Size = new System.Drawing.Size(313, 24);
+            this.TbPathSDP.TabIndex = 1;
+            // 
+            // BtBrowseSDP
+            // 
+            this.BtBrowseSDP.Dock = System.Windows.Forms.DockStyle.Left;
+            this.BtBrowseSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtBrowseSDP.Location = new System.Drawing.Point(322, 18);
+            this.BtBrowseSDP.Name = "BtBrowseSDP";
+            this.BtBrowseSDP.Size = new System.Drawing.Size(32, 25);
+            this.BtBrowseSDP.TabIndex = 2;
+            this.BtBrowseSDP.Text = ". . .";
+            this.BtBrowseSDP.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -217,6 +271,8 @@
             this.flowLayoutPanel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -237,6 +293,10 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label LbPathSDP;
+        private System.Windows.Forms.TextBox TbPathSDP;
+        private System.Windows.Forms.Button BtBrowseSDP;
     }
 }
 
