@@ -54,8 +54,6 @@ namespace DBMaster
                 pathSDP = value;
                 UpdatePathSDP(value);
             }
-            //pathSDP = path;
-            
         }
         public void chekSDPfile()
         {
@@ -100,7 +98,6 @@ namespace DBMaster
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             PathSDP = openFileDialog1.FileName;
-            //pathSDPupdate(openFileDialog1.FileName);
         }
 
         private void BtBrowseCopySDP_Click(object sender, EventArgs e)
