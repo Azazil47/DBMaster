@@ -46,6 +46,11 @@
             this.LbPathSDP = new System.Windows.Forms.Label();
             this.TbPathSDP = new System.Windows.Forms.TextBox();
             this.BtBrowseSDP = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.LbCopySDP = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BtBrowseCopySDP = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -210,24 +215,27 @@
             this.tableLayoutPanel2.Controls.Add(this.LbPathSDP, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.TbPathSDP, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtBrowseSDP, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.LbCopySDP, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.BtBrowseCopySDP, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(370, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.6087F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.3913F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(429, 148);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // LbPathSDP
             // 
             this.LbPathSDP.AutoSize = true;
-            this.LbPathSDP.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LbPathSDP.Location = new System.Drawing.Point(3, 0);
+            this.LbPathSDP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LbPathSDP.Location = new System.Drawing.Point(3, 2);
             this.LbPathSDP.Name = "LbPathSDP";
-            this.LbPathSDP.Size = new System.Drawing.Size(144, 15);
+            this.LbPathSDP.Size = new System.Drawing.Size(313, 13);
             this.LbPathSDP.TabIndex = 0;
             this.LbPathSDP.Text = "Путь к UNI_WORK2003.fdb";
             // 
@@ -250,6 +258,41 @@
             this.BtBrowseSDP.TabIndex = 2;
             this.BtBrowseSDP.Text = ". . .";
             this.BtBrowseSDP.UseVisualStyleBackColor = true;
+            this.BtBrowseSDP.Click += new System.EventHandler(this.BtBrowseSDP_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // LbCopySDP
+            // 
+            this.LbCopySDP.AutoSize = true;
+            this.LbCopySDP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LbCopySDP.Location = new System.Drawing.Point(3, 50);
+            this.LbCopySDP.Name = "LbCopySDP";
+            this.LbCopySDP.Size = new System.Drawing.Size(313, 13);
+            this.LbCopySDP.TabIndex = 3;
+            this.LbCopySDP.Text = "Скопировать UNI_WORK2003.fdb в:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(3, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(313, 24);
+            this.textBox1.TabIndex = 4;
+            // 
+            // BtBrowseCopySDP
+            // 
+            this.BtBrowseCopySDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtBrowseCopySDP.Location = new System.Drawing.Point(322, 66);
+            this.BtBrowseCopySDP.Name = "BtBrowseCopySDP";
+            this.BtBrowseCopySDP.Size = new System.Drawing.Size(32, 24);
+            this.BtBrowseCopySDP.TabIndex = 5;
+            this.BtBrowseCopySDP.Text = ". . .";
+            this.BtBrowseCopySDP.UseVisualStyleBackColor = true;
+            this.BtBrowseCopySDP.Click += new System.EventHandler(this.BtBrowseCopySDP_Click);
             // 
             // Form1
             // 
@@ -297,6 +340,11 @@
         private System.Windows.Forms.Label LbPathSDP;
         private System.Windows.Forms.TextBox TbPathSDP;
         private System.Windows.Forms.Button BtBrowseSDP;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label LbCopySDP;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button BtBrowseCopySDP;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

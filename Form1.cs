@@ -10,7 +10,9 @@ namespace DBMaster
     public partial class Form1 : Form
     {
         private String pathSDP;
-       public void setTextBox(String line) //Метод вывода log на экран
+        private String pathCopySDP;
+
+        public void setTextBox(String line) //Метод вывода log на экран
         {
             if (this.InvokeRequired)
             {
@@ -37,17 +39,20 @@ namespace DBMaster
             });
         }
 
+        public void pathSDPupdate(String path)
+        {
+            pathSDP = path;
+            TbPathSDP.Text = pathSDP;
+        }
         public void chekSDPfile()
         {
             String path = @"C:\Data\Justice\UNI_WORK2003.fdb";
             if (File.Exists(path))
             {
-                pathSDP = path;
-                TbPathSDP.Text = pathSDP;
+                pathSDPupdate(path);
             } else
             {
-                pathSDP = null;
-                TbPathSDP.Text = pathSDP;
+                pathSDPupdate("");
             }
         }
         public Form1()
@@ -77,6 +82,17 @@ namespace DBMaster
             ServiceClass.StartAll(Program.listService);
         }
 
-       
+        private void BtBrowseSDP_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            pathSDPupdate(openFileDialog1.FileName);
+        }
+
+        private void BtBrowseCopySDP_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+        }
     }
 }
