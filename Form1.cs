@@ -36,15 +36,15 @@ namespace DBMaster
                 UpdatePathCopySDP(value);
             }
         }
-        public void UpdatePathSDP(String path)
+        public void UpdatePathSDP(String path)// заполнение поля где лежит SDP
         {
             TbPathSDP.Text = path;
         }
-        public void UpdatePathCopySDP(String path)
+        public void UpdatePathCopySDP(String path) // заполнение поля куда копировать базу SDP
         {
             TbCopySDP.Text = path;
         }
-        public void setTextBox(String line) //Метод вывода log на экран
+        public void setTextBox(String line) //Метод вывода log на экран для другого потока
         {
             if (this.InvokeRequired)
             {
@@ -58,7 +58,7 @@ namespace DBMaster
                 textBoxLog.Text += line;
             }
         }
-        public void greedUpdate()
+        public void greedUpdate() //Обновление списка служб в Greed
         {
             Invoke((MethodInvoker)delegate ()
             {
@@ -71,7 +71,7 @@ namespace DBMaster
             });
         }
 
-        public void chekSDPfile()
+        public void chekSDPfile() // Проверка есть ли файл базы в пути по умолчанию
         {
             String path = @"C:\Data\Justice\UNI_WORK2003.fdb";
             if (File.Exists(path))
@@ -99,28 +99,41 @@ namespace DBMaster
             dataGridView1.Rows.Clear();
         }
 
-        private void buttonStopAll_Click(object sender, EventArgs e)
+        private void buttonStopAll_Click(object sender, EventArgs e) //Кнопка ОСТАНОВИТЬ все службы
         {
             ServiceClass.StopAll(Program.listService);
         }
 
-        private void buttonStartAll_Click(object sender, EventArgs e)
+        private void buttonStartAll_Click(object sender, EventArgs e) // Кнопка ЗАПУСТИТЬ все службы
         {
             ServiceClass.StartAll(Program.listService);
         }
 
-        private void BtBrowseSDP_Click(object sender, EventArgs e)
+        private void BtBrowseSDP_Click(object sender, EventArgs e) // Кнопка ОБЗОРА файла БД
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             PathSDP = openFileDialog1.FileName;
         }
 
-        private void BtBrowseCopySDP_Click(object sender, EventArgs e)
+        private void BtBrowseCopySDP_Click(object sender, EventArgs e) //Кнопка обзора куда созранить копию БД
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             PathCopySDP = saveFileDialog1.FileName;
+        }
+
+        private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА
+        {
+            
+            try
+            {
+                File.Copy(pathSDP, pathCopySDP);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("В папке уже есть такой файл");
+            }
         }
     }
 }
