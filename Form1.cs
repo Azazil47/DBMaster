@@ -94,11 +94,6 @@ namespace DBMaster
             chekSDPfile();
         }
        
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-        }
-
         private void buttonStopAll_Click(object sender, EventArgs e) //Кнопка ОСТАНОВИТЬ все службы
         {
             ServiceClass.StopAll(Program.listService);
