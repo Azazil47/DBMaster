@@ -18,11 +18,19 @@ namespace DBMaster
 
         public void Open()
         {
+            double countEtalon = FileStreamSource.Length/100;
+            double persent = 1;
+            double count = 0;
             while (FileStreamSource.Position < FileStreamSource.Length)
             {
                 byte[] buffer = new byte[1000000];
                 int i = FileStreamSource.Read(buffer, 0, buffer.Length);
                 FileStreamDestination.Write(buffer, 0, i);
+                while (count != FileStreamSource.Length)
+                {
+                    count += countEtalon;
+                    persent = count * 100 / FileStreamSource.Length;
+                }
             }
         }
     }
