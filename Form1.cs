@@ -127,7 +127,8 @@ namespace DBMaster
         private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА
         {
             CopyClass copy = new CopyClass();
-            copy.Open();
+            copy.Copy();
+            
 
             /*try
             {
@@ -137,6 +138,12 @@ namespace DBMaster
             {
                 MessageBox.Show("В папке уже есть такой файл");
             }*/
+        }
+
+        private void buttonStatus_Click(object sender, EventArgs e)
+        {
+            CopyClass copy = new CopyClass();
+            copy.chekMD5();
         }
     }
 }

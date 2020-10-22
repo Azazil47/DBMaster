@@ -77,6 +77,7 @@
             this.buttonStatus.TabIndex = 1;
             this.buttonStatus.Text = "Status";
             this.buttonStatus.UseVisualStyleBackColor = true;
+            this.buttonStatus.Click += new System.EventHandler(this.buttonStatus_Click);
             // 
             // buttonStart
             // 
