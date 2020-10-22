@@ -14,8 +14,8 @@ namespace DBMaster
         private FileStream FileStreamDestination;
         public CopyClass()
         {
-            FileStreamSource = new FileStream(@"c:\Data\Justice\UNI_WORK2003.fdb", FileMode.Open); ;
-            FileStreamDestination = new FileStream(@"c:\Data\BackUp\UNI_WORK2003.fdb", FileMode.OpenOrCreate); ;
+          //  FileStreamSource = new FileStream(@"c:\Data\Justice\UNI_WORK2003.fdb", FileMode.Open);
+            //FileStreamDestination = new FileStream(@"c:\Data\BackUp\UNI_WORK2003.fdb", FileMode.OpenOrCreate);
         }
 
         public void Copy()
@@ -43,9 +43,28 @@ namespace DBMaster
 
         public void chekMD5()
         {
-            string result1 = null;
+            byte[] hash1;
+            byte[] hash2;
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(@"c:\Data\Justice\UNI_WORK2003.fdb"))
+                {
+                    hash1 = md5.ComputeHash(stream);
+                }
+                using (var stream = File.OpenRead(@"c:\Data\BackUp\UNI_WORK2003.fdb"))
+                {
+                    hash2 = md5.ComputeHash(stream);
+                }
+            }
+            if (hash1 == hash2)
+            {
+                MessageBox.Show("OK");
+            }
+            else MessageBox.Show("NO");
+
+            /*string result1 = null;
             string result2 = null; ;
-            using (FileStream fs = System.IO.File.OpenRead(@"c:\Data\Justice\UNI_WORK2003.fdb"))
+            using (FileStream fs = new FileStream(@"c:\Data\Justice\UNI_WORK2003.fdb", FileMode.Open))
             {
                 MD5 md5 = new MD5CryptoServiceProvider();
                 byte[] fileData = new byte[fs.Length];
@@ -54,19 +73,19 @@ namespace DBMaster
                 result1 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
                 
             }
-            using (FileStream fs = System.IO.File.OpenRead(@"c:\Data\BackUp\UNI_WORK2003.fdb"))
+            using (FileStream fs = new FileStream(@"c:\Data\BackUp\UNI_WORK2003.fdb", FileMode.Open))
             {
                 MD5 md5 = new MD5CryptoServiceProvider();
                 byte[] fileData = new byte[fs.Length];
                 fs.Read(fileData, 0, (int)fs.Length);
                 byte[] checkSum = md5.ComputeHash(fileData);
                 result2 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
-            }
-            if (result1 == result2)
+            }*/
+            /*if (result1 == result2)
             {
                 MessageBox.Show("OK");
             }
-            else MessageBox.Show("NO");
+            else MessageBox.Show("NO");*/
         }
     }
 }
