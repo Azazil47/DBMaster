@@ -26,10 +26,11 @@ namespace DBMaster
                 byte[] buffer = new byte[1000000];
                 int i = FileStreamSource.Read(buffer, 0, buffer.Length);
                 FileStreamDestination.Write(buffer, 0, i);
-                while (count != FileStreamSource.Length)
+                while (persent < 100)
                 {
                     count += countEtalon;
                     persent = count * 100 / FileStreamSource.Length;
+                    Program.myForm.updProgressBar(persent);
                 }
             }
         }

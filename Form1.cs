@@ -58,6 +58,12 @@ namespace DBMaster
                 textBoxLog.Text += line;
             }
         }
+        //ТЕСТОВЫЙ МЕТОД для прогресс бара
+
+        public void updProgressBar(double persent)
+        {
+            progressBar1.Value = (int) persent;
+        }
         public void greedUpdate() //Обновление списка служб в Greed
         {
             Invoke((MethodInvoker)delegate ()
