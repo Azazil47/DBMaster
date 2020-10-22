@@ -56,7 +56,7 @@ namespace DBMaster
                     hash2 = md5.ComputeHash(stream);
                 }
             }
-            if (hash1 == hash2)
+            if (hash1.ToString().Equals(hash2.ToString()))
             {
                 MessageBox.Show("OK");
             }
