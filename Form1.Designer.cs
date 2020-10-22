@@ -212,7 +212,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.46154F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.53846F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tableLayoutPanel2.Controls.Add(this.LbPathSDP, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.TbPathSDP, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtBrowseSDP, 1, 1);
@@ -238,7 +238,7 @@
             this.LbPathSDP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LbPathSDP.Location = new System.Drawing.Point(3, 4);
             this.LbPathSDP.Name = "LbPathSDP";
-            this.LbPathSDP.Size = new System.Drawing.Size(292, 13);
+            this.LbPathSDP.Size = new System.Drawing.Size(289, 13);
             this.LbPathSDP.TabIndex = 0;
             this.LbPathSDP.Text = "Путь к UNI_WORK2003.fdb";
             // 
@@ -248,14 +248,14 @@
             this.TbPathSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbPathSDP.Location = new System.Drawing.Point(3, 20);
             this.TbPathSDP.Name = "TbPathSDP";
-            this.TbPathSDP.Size = new System.Drawing.Size(292, 24);
+            this.TbPathSDP.Size = new System.Drawing.Size(289, 24);
             this.TbPathSDP.TabIndex = 1;
             // 
             // BtBrowseSDP
             // 
             this.BtBrowseSDP.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtBrowseSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtBrowseSDP.Location = new System.Drawing.Point(301, 20);
+            this.BtBrowseSDP.Location = new System.Drawing.Point(298, 20);
             this.BtBrowseSDP.Name = "BtBrowseSDP";
             this.BtBrowseSDP.Size = new System.Drawing.Size(32, 19);
             this.BtBrowseSDP.TabIndex = 2;
@@ -269,7 +269,7 @@
             this.LbCopySDP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LbCopySDP.Location = new System.Drawing.Point(3, 50);
             this.LbCopySDP.Name = "LbCopySDP";
-            this.LbCopySDP.Size = new System.Drawing.Size(292, 13);
+            this.LbCopySDP.Size = new System.Drawing.Size(289, 13);
             this.LbCopySDP.TabIndex = 3;
             this.LbCopySDP.Text = "Скопировать UNI_WORK2003.fdb в:";
             // 
@@ -279,13 +279,13 @@
             this.TbCopySDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.TbCopySDP.Location = new System.Drawing.Point(3, 66);
             this.TbCopySDP.Name = "TbCopySDP";
-            this.TbCopySDP.Size = new System.Drawing.Size(292, 24);
+            this.TbCopySDP.Size = new System.Drawing.Size(289, 24);
             this.TbCopySDP.TabIndex = 4;
             // 
             // BtBrowseCopySDP
             // 
             this.BtBrowseCopySDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtBrowseCopySDP.Location = new System.Drawing.Point(301, 66);
+            this.BtBrowseCopySDP.Location = new System.Drawing.Point(298, 66);
             this.BtBrowseCopySDP.Name = "BtBrowseCopySDP";
             this.BtBrowseCopySDP.Size = new System.Drawing.Size(32, 24);
             this.BtBrowseCopySDP.TabIndex = 5;
@@ -295,7 +295,7 @@
             // 
             // BtCopySDP
             // 
-            this.BtCopySDP.Location = new System.Drawing.Point(339, 3);
+            this.BtCopySDP.Location = new System.Drawing.Point(336, 3);
             this.BtCopySDP.Name = "BtCopySDP";
             this.tableLayoutPanel2.SetRowSpan(this.BtCopySDP, 4);
             this.BtCopySDP.Size = new System.Drawing.Size(100, 87);

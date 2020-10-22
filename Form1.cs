@@ -120,15 +120,17 @@ namespace DBMaster
 
         private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА
         {
-            
-            try
+            CopyClass copy = new CopyClass();
+            copy.Open();
+
+            /*try
             {
                 File.Copy(pathSDP, pathCopySDP);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("В папке уже есть такой файл");
-            }
+            }*/
         }
     }
 }
