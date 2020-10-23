@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DBMaster
@@ -14,12 +15,13 @@ namespace DBMaster
         private FileStream FileStreamDestination;
         public CopyClass()
         {
-          //  FileStreamSource = new FileStream(@"c:\Data\Justice\UNI_WORK2003.fdb", FileMode.Open);
-            //FileStreamDestination = new FileStream(@"c:\Data\BackUp\UNI_WORK2003.fdb", FileMode.OpenOrCreate);
+            
         }
 
-        public void Copy()
+        public void Copy(string fileSource, string fileDestination)
         {
+            FileStreamSource = new FileStream(fileSource, FileMode.Open);
+            FileStreamDestination = new FileStream(fileDestination, FileMode.OpenOrCreate);
             double countEtalon = FileStreamSource.Length/100;
             double persent = 1;
             double count = 0;
@@ -35,57 +37,34 @@ namespace DBMaster
                     Program.myForm.updProgressBar(persent);
                 }
             }
-            FileStreamSource.Flush();
             FileStreamSource.Close();
             FileStreamDestination.Flush();
             FileStreamDestination.Close();
+
+            chekMD5(fileSource, fileDestination);
+
         }
 
-        public void chekMD5()
+        public void chekMD5(string fileSource, string fileDestination)
         {
             byte[] hash1;
             byte[] hash2;
             using (var md5 = MD5.Create())
             {
-                using (var stream = File.OpenRead(@"c:\Data\Justice\UNI_WORK2003.fdb"))
+                using (var stream = File.OpenRead(fileSource))
                 {
                     hash1 = md5.ComputeHash(stream);
                 }
-                using (var stream = File.OpenRead(@"c:\Data\BackUp\UNI_WORK2003.fdb"))
+                using (var stream = File.OpenRead(fileDestination))
                 {
                     hash2 = md5.ComputeHash(stream);
                 }
             }
             if (hash1.ToString().Equals(hash2.ToString()))
             {
-                MessageBox.Show("OK");
+                MessageBox.Show("База данных успешко скопирована");
             }
-            else MessageBox.Show("NO");
-
-            /*string result1 = null;
-            string result2 = null; ;
-            using (FileStream fs = new FileStream(@"c:\Data\Justice\UNI_WORK2003.fdb", FileMode.Open))
-            {
-                MD5 md5 = new MD5CryptoServiceProvider();
-                byte[] fileData = new byte[fs.Length];
-                fs.Read(fileData, 0, (int)fs.Length);
-                byte[] checkSum = md5.ComputeHash(fileData);
-                result1 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
-                
-            }
-            using (FileStream fs = new FileStream(@"c:\Data\BackUp\UNI_WORK2003.fdb", FileMode.Open))
-            {
-                MD5 md5 = new MD5CryptoServiceProvider();
-                byte[] fileData = new byte[fs.Length];
-                fs.Read(fileData, 0, (int)fs.Length);
-                byte[] checkSum = md5.ComputeHash(fileData);
-                result2 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
-            }*/
-            /*if (result1 == result2)
-            {
-                MessageBox.Show("OK");
-            }
-            else MessageBox.Show("NO");*/
+            else MessageBox.Show("Ошибка контрольной суммы базы данных");
         }
     }
 }

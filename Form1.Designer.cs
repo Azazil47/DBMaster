@@ -195,8 +195,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.06493F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.93507F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.71429F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.28571F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 308);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
@@ -214,7 +214,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.46154F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.53846F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this.tableLayoutPanel2.Controls.Add(this.LbPathSDP, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.TbPathSDP, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtBrowseSDP, 1, 1);
@@ -227,22 +227,22 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(356, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.47619F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.52381F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 21F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.29412F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.70588F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(443, 101);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(443, 104);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // LbPathSDP
             // 
             this.LbPathSDP.AutoSize = true;
             this.LbPathSDP.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LbPathSDP.Location = new System.Drawing.Point(3, 0);
+            this.LbPathSDP.Location = new System.Drawing.Point(3, 3);
             this.LbPathSDP.Name = "LbPathSDP";
-            this.LbPathSDP.Size = new System.Drawing.Size(285, 13);
+            this.LbPathSDP.Size = new System.Drawing.Size(284, 13);
             this.LbPathSDP.TabIndex = 0;
             this.LbPathSDP.Text = "Путь к UNI_WORK2003.fdb";
             // 
@@ -250,18 +250,18 @@
             // 
             this.TbPathSDP.Dock = System.Windows.Forms.DockStyle.Left;
             this.TbPathSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbPathSDP.Location = new System.Drawing.Point(3, 16);
+            this.TbPathSDP.Location = new System.Drawing.Point(3, 19);
             this.TbPathSDP.Name = "TbPathSDP";
-            this.TbPathSDP.Size = new System.Drawing.Size(285, 24);
+            this.TbPathSDP.Size = new System.Drawing.Size(284, 24);
             this.TbPathSDP.TabIndex = 1;
             // 
             // BtBrowseSDP
             // 
             this.BtBrowseSDP.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtBrowseSDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtBrowseSDP.Location = new System.Drawing.Point(294, 16);
+            this.BtBrowseSDP.Location = new System.Drawing.Point(293, 19);
             this.BtBrowseSDP.Name = "BtBrowseSDP";
-            this.BtBrowseSDP.Size = new System.Drawing.Size(31, 14);
+            this.BtBrowseSDP.Size = new System.Drawing.Size(31, 24);
             this.BtBrowseSDP.TabIndex = 2;
             this.BtBrowseSDP.Text = ". . .";
             this.BtBrowseSDP.UseVisualStyleBackColor = true;
@@ -269,18 +269,19 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(3, 85);
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.Location = new System.Drawing.Point(3, 96);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(285, 5);
+            this.progressBar1.Size = new System.Drawing.Size(284, 5);
             this.progressBar1.TabIndex = 14;
             // 
             // LbCopySDP
             // 
             this.LbCopySDP.AutoSize = true;
             this.LbCopySDP.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LbCopySDP.Location = new System.Drawing.Point(3, 41);
+            this.LbCopySDP.Location = new System.Drawing.Point(3, 48);
             this.LbCopySDP.Name = "LbCopySDP";
-            this.LbCopySDP.Size = new System.Drawing.Size(285, 13);
+            this.LbCopySDP.Size = new System.Drawing.Size(284, 13);
             this.LbCopySDP.TabIndex = 3;
             this.LbCopySDP.Text = "Скопировать UNI_WORK2003.fdb в:";
             // 
@@ -288,17 +289,17 @@
             // 
             this.TbCopySDP.Dock = System.Windows.Forms.DockStyle.Left;
             this.TbCopySDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TbCopySDP.Location = new System.Drawing.Point(3, 57);
+            this.TbCopySDP.Location = new System.Drawing.Point(3, 64);
             this.TbCopySDP.Name = "TbCopySDP";
-            this.TbCopySDP.Size = new System.Drawing.Size(285, 24);
+            this.TbCopySDP.Size = new System.Drawing.Size(284, 24);
             this.TbCopySDP.TabIndex = 4;
             // 
             // BtBrowseCopySDP
             // 
             this.BtBrowseCopySDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtBrowseCopySDP.Location = new System.Drawing.Point(294, 57);
+            this.BtBrowseCopySDP.Location = new System.Drawing.Point(293, 64);
             this.BtBrowseCopySDP.Name = "BtBrowseCopySDP";
-            this.BtBrowseCopySDP.Size = new System.Drawing.Size(31, 22);
+            this.BtBrowseCopySDP.Size = new System.Drawing.Size(31, 24);
             this.BtBrowseCopySDP.TabIndex = 5;
             this.BtBrowseCopySDP.Text = ". . .";
             this.BtBrowseCopySDP.UseVisualStyleBackColor = true;
@@ -306,7 +307,7 @@
             // 
             // BtCopySDP
             // 
-            this.BtCopySDP.Location = new System.Drawing.Point(331, 3);
+            this.BtCopySDP.Location = new System.Drawing.Point(330, 3);
             this.BtCopySDP.Name = "BtCopySDP";
             this.tableLayoutPanel2.SetRowSpan(this.BtCopySDP, 4);
             this.BtCopySDP.Size = new System.Drawing.Size(100, 76);

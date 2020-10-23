@@ -62,7 +62,16 @@ namespace DBMaster
 
         public void updProgressBar(double persent)
         {
-            progressBar1.Value = (int) persent;
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new MethodInvoker(delegate
+                {
+                    progressBar1.Value = (int)persent;
+                }));
+            } else
+            {
+                progressBar1.Value = (int)persent;
+            }
         }
         public void greedUpdate() //Обновление списка служб в Greed
         {
@@ -127,8 +136,10 @@ namespace DBMaster
         private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА
         {
             CopyClass copy = new CopyClass();
-            copy.Copy();
+            copy.Copy(PathSDP, pathCopySDP);
             
+            Thread thread = new Thread(Copy());
+            thread.Start(PathSDP, pathCopySDP);
 
             /*try
             {
@@ -142,8 +153,8 @@ namespace DBMaster
 
         private void buttonStatus_Click(object sender, EventArgs e)
         {
-            CopyClass copy = new CopyClass();
-            copy.chekMD5();
+           // CopyClass copy = new CopyClass();
+            //copy.chekMD5();
         }
 
         
