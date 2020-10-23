@@ -136,10 +136,9 @@ namespace DBMaster
         private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА
         {
             CopyClass copy = new CopyClass();
-            copy.Copy(PathSDP, pathCopySDP);
             
-            Thread thread = new Thread(Copy());
-            thread.Start(PathSDP, pathCopySDP);
+            var thread = new Thread(() => copy.Copy(PathSDP, pathCopySDP));
+            thread.Start();
 
             /*try
             {

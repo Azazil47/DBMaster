@@ -20,6 +20,7 @@ namespace DBMaster
 
         public void Copy(string fileSource, string fileDestination)
         {
+            
             FileStreamSource = new FileStream(fileSource, FileMode.Open);
             FileStreamDestination = new FileStream(fileDestination, FileMode.OpenOrCreate);
             double countEtalon = FileStreamSource.Length/100;
