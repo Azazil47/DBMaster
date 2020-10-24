@@ -133,27 +133,18 @@ namespace DBMaster
             PathCopySDP = saveFileDialog1.FileName;
         }
 
-        private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА
+        private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА Копирование присходит в отдельном потоке
         {
             CopyClass copy = new CopyClass();
             
             var thread = new Thread(() => copy.Copy(PathSDP, pathCopySDP));
             thread.Start();
 
-            /*try
-            {
-                File.Copy(pathSDP, pathCopySDP);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("В папке уже есть такой файл");
-            }*/
         }
 
         private void buttonStatus_Click(object sender, EventArgs e)
         {
-           // CopyClass copy = new CopyClass();
-            //copy.chekMD5();
+           
         }
 
         

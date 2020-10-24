@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -20,30 +21,34 @@ namespace DBMaster
 
         public void Copy(string fileSource, string fileDestination)
         {
-            
-            FileStreamSource = new FileStream(fileSource, FileMode.Open);
-            FileStreamDestination = new FileStream(fileDestination, FileMode.OpenOrCreate);
-            double countEtalon = FileStreamSource.Length/100;
-            double persent = 1;
-            double count = 0;
-            while (FileStreamSource.Position < FileStreamSource.Length)
+            if(ServiceClass.ChekServices(Program.listService))
             {
-                byte[] buffer = new byte[1000000];
-                int i = FileStreamSource.Read(buffer, 0, buffer.Length);
-                FileStreamDestination.Write(buffer, 0, i);
-                while (persent < 100)
-                {
-                    count += countEtalon;
-                    persent = count * 100 / FileStreamSource.Length;
-                    Program.myForm.updProgressBar(persent);
-                }
+                MessageBox.Show("Не все службы остановлены");
             }
-            FileStreamSource.Close();
-            FileStreamDestination.Flush();
-            FileStreamDestination.Close();
-
-            chekMD5(fileSource, fileDestination);
-
+            else
+            {
+                FileStreamSource = new FileStream(fileSource, FileMode.Open);
+                FileStreamDestination = new FileStream(fileDestination, FileMode.OpenOrCreate);
+                double countEtalon = FileStreamSource.Length / 100;
+                double persent = 1;
+                double count = 0;
+                while (FileStreamSource.Position < FileStreamSource.Length)
+                {
+                    byte[] buffer = new byte[1000000];
+                    int i = FileStreamSource.Read(buffer, 0, buffer.Length);
+                    FileStreamDestination.Write(buffer, 0, i);
+                    while (persent < 100)
+                    {
+                        count += countEtalon;
+                        persent = count * 100 / FileStreamSource.Length;
+                        Program.myForm.updProgressBar(persent);
+                    }
+                }
+                FileStreamSource.Close();
+                FileStreamDestination.Flush();
+                FileStreamDestination.Close();
+                chekMD5(fileSource, fileDestination);
+            }
         }
 
         public void chekMD5(string fileSource, string fileDestination)

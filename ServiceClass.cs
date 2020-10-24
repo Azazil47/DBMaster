@@ -107,5 +107,19 @@ public static class ServiceClass // : ServiceController
             thread.Start(item[0]);
         }
     }
+    
+    public static Boolean ChekServices(List<String[]> list)
+    {
+        Boolean flag = false;
+        foreach (String[] item in list)
+        {
+            ServiceController service = new ServiceController(item[0]);
+            if (!service.Status.Equals(ServiceControllerStatus.Stopped))
+            {
+                flag = true;
+            }
+        }
+        return flag; ;
+    }
 }
 
