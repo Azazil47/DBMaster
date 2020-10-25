@@ -96,6 +96,7 @@ public static class ServiceClass // : ServiceController
         {
             Thread thread = new Thread(Stop);
             thread.Start(item[0]);
+            
         }
     }
 
@@ -105,6 +106,7 @@ public static class ServiceClass // : ServiceController
         {
             Thread thread = new Thread(Start);
             thread.Start(item[0]);
+            
         }
     }
     
