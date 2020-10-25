@@ -66,9 +66,9 @@ namespace DBMaster
                     hash2 = md5.ComputeHash(stream);
                 }
             }
-            if (hash1.ToString().Equals(hash2.ToString()))
+            if (hash1.ToString()==(hash2.ToString()))
             {
-                MessageBox.Show("База данных успешко скопирована");
+                MessageBox.Show("База данных успешно скопирована");
             }
             else MessageBox.Show("Ошибка контрольной суммы базы данных");
         }
