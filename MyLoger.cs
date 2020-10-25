@@ -21,7 +21,6 @@ namespace DBMaster
         {
             return lvl[i];
         }
-
         public enum MyEnum
         {
             ERROR = -1, INFO = 0, WARNING =1
