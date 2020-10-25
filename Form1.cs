@@ -144,7 +144,9 @@ namespace DBMaster
 
         private void buttonStatus_Click(object sender, EventArgs e)
         {
-           
+            CopyClass copy = new CopyClass();
+            copy.chekMD5(@"c:\Data\Justice\UNI_WORK2003.fdb", @"c:\Data\BackUp\3.fdb");
+            
         }
 
         

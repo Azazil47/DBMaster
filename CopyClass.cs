@@ -19,7 +19,7 @@ namespace DBMaster
             
         }
 
-        public void Copy(string fileSource, string fileDestination)
+        public void Copy(string fileSource, string fileDestination) //Метод копирования БД
         {
             if(ServiceClass.ChekServices(Program.listService))
             {

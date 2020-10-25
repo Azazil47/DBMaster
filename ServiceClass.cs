@@ -119,7 +119,7 @@ public static class ServiceClass // : ServiceController
                 flag = true;
             }
         }
-        return flag; ;
+        return flag;
     }
 }
 
