@@ -41,7 +41,7 @@ namespace DBMaster
                     {
                         count += countEtalon;
                         persent = count * 100 / FileStreamSource.Length;
-                        Program.myForm.updProgressBar(persent);
+                       // Program.myForm.updProgressBar(persent);
                     }
                 }
                 FileStreamSource.Close();

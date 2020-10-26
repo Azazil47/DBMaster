@@ -10,7 +10,7 @@ namespace DBMaster
     static class MyLoger
     {
         private static Dictionary<int, Enum> lvl = new Dictionary<int, Enum>();
-        
+        private static object locker = new object();
         static MyLoger() 
             {
             lvl.Add(-1, MyEnum.ERROR);
@@ -29,32 +29,40 @@ namespace DBMaster
 
         public static void writeFile(int level, String line, String name, ServiceControllerStatus stat) //ЗАПИСЬ В ФАЙЛ
         {
-            try
+            lock (locker)
             {
-                DateTime date = DateTime.Now;
-                StreamWriter writer = new StreamWriter($"Log\\{date.ToString("dd.MM.yyyy")}.log", true);
-                writer.WriteLine($"{date.ToString("HH:mm:ss") } - {getlvl(level)} Служба \"{name}\" - {stat}");
-                writer.Close();
+                try
+                {
+                    DateTime date = DateTime.Now;
+                    StreamWriter writer = new StreamWriter($"Log\\{date.ToString("dd.MM.yyyy")}.log", true);
+                    writer.WriteLine($"{date.ToString("HH:mm:ss") } - {getlvl(level)} Служба \"{name}\" - {stat}");
+                    writer.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
+            
         }
 
         public static void writeFile(int level, String line, String name, String stat) //ЗАПИСЬ В ФАЙЛ ДЛЯ НЕКОРРЕКТНОЙ СЛУЖБЫ
         {
-            try
+            lock (locker)
             {
-                DateTime date = DateTime.Now;
-                StreamWriter writer = new StreamWriter($"Log\\{date.ToString("dd.MM.yyyy")}.log", true);
-                writer.WriteLine($"{date.ToString("HH:mm:ss") } - {getlvl(level)} Служба \"{name}\" - {stat}");
-                writer.Close();
+                try
+                {
+                    DateTime date = DateTime.Now;
+                    StreamWriter writer = new StreamWriter($"Log\\{date.ToString("dd.MM.yyyy")}.log", true);
+                    writer.WriteLine($"{date.ToString("HH:mm:ss") } - {getlvl(level)} Служба \"{name}\" - {stat}");
+                    writer.Close();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Не удалось записать файл log");
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Не удалось записать файл log");
-            }
+            
         }
 
         public static void writeTextBox(int level, String line, String name, String stat) //ЗАПИСЬ В TEXTBOX

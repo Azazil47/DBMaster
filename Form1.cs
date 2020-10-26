@@ -9,7 +9,7 @@ namespace DBMaster
 {
     public partial class Form1 : Form
     {
-        private String pathSDP;
+       /* private String pathSDP;
         public String PathSDP
         {
             get
@@ -21,9 +21,9 @@ namespace DBMaster
                 pathSDP = value;
                 UpdatePathSDP(value);
             }
-        }
+        }*/
 
-        private String pathCopySDP;
+      /*  private String pathCopySDP;
         public String PathCopySDP
         {
             get
@@ -35,15 +35,15 @@ namespace DBMaster
                 pathCopySDP = value;
                 UpdatePathCopySDP(value);
             }
-        }
-        public void UpdatePathSDP(String path)// заполнение поля где лежит SDP
+        }*/
+        /*public void UpdatePathSDP(String path)// заполнение поля где лежит SDP
         {
             TbPathSDP.Text = path;
-        }
-        public void UpdatePathCopySDP(String path) // заполнение поля куда копировать базу SDP
+        }*/
+        /*public void UpdatePathCopySDP(String path) // заполнение поля куда копировать базу SDP
         {
             TbCopySDP.Text = path;
-        }
+        }*/
         public void setTextBox(String line) //Метод вывода log на экран для другого потока
         {
             if (this.InvokeRequired)
@@ -60,7 +60,7 @@ namespace DBMaster
         }
         //ТЕСТОВЫЙ МЕТОД для прогресс бара
 
-        public void updProgressBar(double persent)
+       /* public void updProgressBar(double persent)
         {
             if (this.InvokeRequired)
             {
@@ -72,7 +72,7 @@ namespace DBMaster
             {
                 progressBar1.Value = (int)persent;
             }
-        }
+        }*/
         public void greedUpdate() //Обновление списка служб в Greed
         {
             Invoke((MethodInvoker)delegate ()
@@ -86,7 +86,7 @@ namespace DBMaster
             });
         }
 
-        public void chekSDPfile() // Проверка есть ли файл базы в пути по умолчанию
+       /* public void chekSDPfile() // Проверка есть ли файл базы в пути по умолчанию
         {
             String path = @"C:\Data\Justice\UNI_WORK2003.fdb";
             if (File.Exists(path))
@@ -96,7 +96,7 @@ namespace DBMaster
             {
                 PathSDP = "";
             }
-        }
+        }*/
         public Form1()
         {
             InitializeComponent();
@@ -106,7 +106,7 @@ namespace DBMaster
         private void Form1_Load(object sender, EventArgs e)
         {
             greedUpdate();
-            chekSDPfile();
+            //chekSDPfile();
         }
        
         private void buttonStopAll_Click(object sender, EventArgs e) //Кнопка ОСТАНОВИТЬ все службы
@@ -119,28 +119,28 @@ namespace DBMaster
             ServiceClass.StartAll(Program.listService);
         }
 
-        private void BtBrowseSDP_Click(object sender, EventArgs e) // Кнопка ОБЗОРА файла БД
+      /*  private void BtBrowseSDP_Click(object sender, EventArgs e) // Кнопка ОБЗОРА файла БД
         {
             if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             PathSDP = openFileDialog1.FileName;
-        }
+        }*/
 
-        private void BtBrowseCopySDP_Click(object sender, EventArgs e) //Кнопка обзора куда созранить копию БД
+      /*  private void BtBrowseCopySDP_Click(object sender, EventArgs e) //Кнопка обзора куда созранить копию БД
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
                 return;
             PathCopySDP = saveFileDialog1.FileName;
-        }
+        }*/
 
-        private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА Копирование присходит в отдельном потоке
+       /* private void BtCopySDP_Click(object sender, EventArgs e) //КНОПКА КОПИРОВАНИЯ ФАЙЛА Копирование присходит в отдельном потоке
         {
             CopyClass copy = new CopyClass();
             
             var thread = new Thread(() => copy.Copy(PathSDP, pathCopySDP));
             thread.Start();
 
-        }
+        }*/
 
         private void buttonStatus_Click(object sender, EventArgs e)
         {
@@ -148,6 +148,10 @@ namespace DBMaster
             
         }
 
-        
+        private void buttonCopySDP_Click(object sender, EventArgs e)
+        {
+            DbCopyForm formCopySDP = new DbCopyForm();
+            formCopySDP.Show();
+        }
     }
 }
