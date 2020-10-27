@@ -73,10 +73,11 @@ namespace DBMaster
         private void DbCopyForm_Load(object sender, EventArgs e)
         {
             PathSource = Properties.Settings.Default._pathSDPdest;
-            PathSource = openFileDialog1.FileName;
+
+           // PathSource = openFileDialog1.FileName;
             textBoxSource.Text = PathSource;
             PathDest = Properties.Settings.Default._pathSDPdest;
-            PathDest = saveFileDialog1.FileName;
+           // PathDest = saveFileDialog1.FileName;
             textBoxDest.Text = PathDest;
         }
 
