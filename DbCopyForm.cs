@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DBMaster
@@ -67,17 +68,17 @@ namespace DBMaster
 
         private void buttonCopy_Click(object sender, EventArgs e)
         {
-            
+            CopyClass copySDP = new CopyClass();
+            var thread = new Thread(() => copySDP.Copy(PathSource, PathDest));
+            thread.Start();
+            this.Close();
         }
 
         private void DbCopyForm_Load(object sender, EventArgs e)
         {
-            PathSource = Properties.Settings.Default._pathSDPdest;
-
-           // PathSource = openFileDialog1.FileName;
+            PathSource = Properties.Settings.Default._pathSDPsour;
             textBoxSource.Text = PathSource;
             PathDest = Properties.Settings.Default._pathSDPdest;
-           // PathDest = saveFileDialog1.FileName;
             textBoxDest.Text = PathDest;
         }
 

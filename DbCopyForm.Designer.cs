@@ -35,10 +35,10 @@
             this.labelDestination = new System.Windows.Forms.Label();
             this.textBoxDest = new System.Windows.Forms.TextBox();
             this.buttonBrwDest = new System.Windows.Forms.Button();
-            this.buttonCopy = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonCopy = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
@@ -130,38 +130,6 @@
             this.buttonBrwDest.UseVisualStyleBackColor = true;
             this.buttonBrwDest.Click += new System.EventHandler(this.buttonBrwDest_Click);
             // 
-            // buttonCopy
-            // 
-            this.buttonCopy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonCopy.Location = new System.Drawing.Point(3, 22);
-            this.buttonCopy.Name = "buttonCopy";
-            this.buttonCopy.Size = new System.Drawing.Size(85, 21);
-            this.buttonCopy.TabIndex = 0;
-            this.buttonCopy.Text = "Скопировать";
-            this.buttonCopy.UseVisualStyleBackColor = true;
-            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonSave.Location = new System.Drawing.Point(94, 22);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(85, 21);
-            this.buttonSave.TabIndex = 1;
-            this.buttonSave.Text = "Сохранить";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonCancel.Location = new System.Drawing.Point(185, 22);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(97, 21);
-            this.buttonCancel.TabIndex = 2;
-            this.buttonCancel.Text = "Отмена";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
@@ -178,6 +146,38 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(285, 46);
             this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCancel.Location = new System.Drawing.Point(185, 22);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(97, 21);
+            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonSave.Location = new System.Drawing.Point(94, 22);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(85, 21);
+            this.buttonSave.TabIndex = 1;
+            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // buttonCopy
+            // 
+            this.buttonCopy.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCopy.Location = new System.Drawing.Point(3, 22);
+            this.buttonCopy.Name = "buttonCopy";
+            this.buttonCopy.Size = new System.Drawing.Size(85, 21);
+            this.buttonCopy.TabIndex = 0;
+            this.buttonCopy.Text = "Скопировать";
+            this.buttonCopy.UseVisualStyleBackColor = true;
+            this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
             // openFileDialog1
             // 

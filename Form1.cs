@@ -60,19 +60,19 @@ namespace DBMaster
         }
         //ТЕСТОВЫЙ МЕТОД для прогресс бара
 
-       /* public void updProgressBar(double persent)
+       public void updProgressBar(double persent)
         {
             if (this.InvokeRequired)
             {
                 this.BeginInvoke(new MethodInvoker(delegate
                 {
-                    progressBar1.Value = (int)persent;
+                    progressBarSDP.Value = (int)persent;
                 }));
             } else
             {
-                progressBar1.Value = (int)persent;
+                progressBarSDP.Value = (int)persent;
             }
-        }*/
+        }
         public void greedUpdate() //Обновление списка служб в Greed
         {
             Invoke((MethodInvoker)delegate ()
@@ -86,17 +86,7 @@ namespace DBMaster
             });
         }
 
-       /* public void chekSDPfile() // Проверка есть ли файл базы в пути по умолчанию
-        {
-            String path = @"C:\Data\Justice\UNI_WORK2003.fdb";
-            if (File.Exists(path))
-            {
-                PathSDP = path;
-            } else
-            {
-                PathSDP = "";
-            }
-        }*/
+       
         public Form1()
         {
             InitializeComponent();
