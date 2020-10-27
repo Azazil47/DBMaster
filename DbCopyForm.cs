@@ -88,5 +88,10 @@ namespace DBMaster
             Properties.Settings.Default._pathSDPdest = PathDest;
             Properties.Settings.Default.Save();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

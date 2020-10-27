@@ -46,5 +46,17 @@ namespace DBMaster.Properties {
                 this["_pathSDPdest"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("FirebirdServerDefaultInstance spooler")]
+        public string _serviceList {
+            get {
+                return ((string)(this["_serviceList"]));
+            }
+            set {
+                this["_serviceList"] = value;
+            }
+        }
     }
 }

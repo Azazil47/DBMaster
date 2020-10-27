@@ -8,5 +8,8 @@
     <Setting Name="_pathSDPdest" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="_serviceList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FirebirdServerDefaultInstance spooler</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

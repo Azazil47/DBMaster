@@ -115,7 +115,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(198, 97);
+            this.dataGridView1.Size = new System.Drawing.Size(217, 97);
             this.dataGridView1.TabIndex = 6;
             // 
             // ServiceName
@@ -178,9 +178,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.82228F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.17772F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 276F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.16868F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.83133F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -196,7 +196,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.buttonStartAll);
             this.flowLayoutPanel2.Controls.Add(this.buttonStopAll);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(270, 3);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(226, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(103, 61);
             this.flowLayoutPanel2.TabIndex = 12;
@@ -204,18 +204,18 @@
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.74336F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.25664F));
             this.tableLayoutPanel2.Controls.Add(this.buttonCopySDP, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.progressBarSDP, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(380, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(335, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(271, 104);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(316, 104);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // buttonCopySDP
@@ -223,7 +223,7 @@
             this.buttonCopySDP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonCopySDP.Location = new System.Drawing.Point(3, 3);
             this.buttonCopySDP.Name = "buttonCopySDP";
-            this.buttonCopySDP.Size = new System.Drawing.Size(129, 22);
+            this.buttonCopySDP.Size = new System.Drawing.Size(97, 22);
             this.buttonCopySDP.TabIndex = 0;
             this.buttonCopySDP.Text = "Копировать БД";
             this.buttonCopySDP.UseVisualStyleBackColor = true;
@@ -232,9 +232,9 @@
             // progressBarSDP
             // 
             this.progressBarSDP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBarSDP.Location = new System.Drawing.Point(138, 3);
+            this.progressBarSDP.Location = new System.Drawing.Point(106, 3);
             this.progressBarSDP.Name = "progressBarSDP";
-            this.progressBarSDP.Size = new System.Drawing.Size(130, 22);
+            this.progressBarSDP.Size = new System.Drawing.Size(207, 22);
             this.progressBarSDP.TabIndex = 1;
             // 
             // Form1

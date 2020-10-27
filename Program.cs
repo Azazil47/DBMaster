@@ -11,35 +11,17 @@ namespace DBMaster
     static class Program
     {
         public static Form1 myForm;
-        public static List<String[]> listService = new List<String[]>();
-        public static void LoadService() //Загрузка списка служб из файла
+        public static List<String> listService = new List<String>();
+
+        public static void getService()
         {
-            try
+            string Services = Properties.Settings.Default._serviceList;
+           string[] list = Services.Split();
+            foreach (string item in list)
             {
-                using (StreamReader sr = new StreamReader("Services.ini"))
-                {
-                    String line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        ServiceController serv = null ; 
-                        try
-                        {
-                            serv = new ServiceController(line);
-                            listService.Add(new string[2] { line, serv.Status.ToString() });
-                            serv.Status.ToString();
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show($"Не корректная служба \"{line}\" будет исключена из списка служб");
-                        }
-                        
-                    }
-                }
+                listService.Add(item);
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Не удалось загрузить некоторые службы из файла Services.ini");
-            }
+
         }
 
         /// <summary>
@@ -52,7 +34,8 @@ namespace DBMaster
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoadService();
+            getService();
+            //LoadService();
             myForm = new Form1();
             Application.Run(myForm);
             
