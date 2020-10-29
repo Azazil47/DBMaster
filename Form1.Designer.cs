@@ -45,11 +45,13 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonCopySDP = new System.Windows.Forms.Button();
             this.progressBarSDP = new System.Windows.Forms.ProgressBar();
+            this.dataSet1 = new System.Data.DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonStop
@@ -105,17 +107,18 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ServiceName,
             this.ServiceState});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(217, 97);
+            this.dataGridView1.Size = new System.Drawing.Size(217, 130);
             this.dataGridView1.TabIndex = 6;
             // 
             // ServiceName
@@ -187,8 +190,8 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.71429F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.28571F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.48052F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.51948F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(654, 308);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
@@ -212,10 +215,10 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(335, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.14286F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(316, 104);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(316, 130);
             this.tableLayoutPanel2.TabIndex = 13;
             // 
             // buttonCopySDP
@@ -223,7 +226,7 @@
             this.buttonCopySDP.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonCopySDP.Location = new System.Drawing.Point(3, 3);
             this.buttonCopySDP.Name = "buttonCopySDP";
-            this.buttonCopySDP.Size = new System.Drawing.Size(97, 22);
+            this.buttonCopySDP.Size = new System.Drawing.Size(97, 21);
             this.buttonCopySDP.TabIndex = 0;
             this.buttonCopySDP.Text = "Копировать БД";
             this.buttonCopySDP.UseVisualStyleBackColor = true;
@@ -234,8 +237,12 @@
             this.progressBarSDP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBarSDP.Location = new System.Drawing.Point(106, 3);
             this.progressBarSDP.Name = "progressBarSDP";
-            this.progressBarSDP.Size = new System.Drawing.Size(207, 22);
+            this.progressBarSDP.Size = new System.Drawing.Size(207, 21);
             this.progressBarSDP.TabIndex = 1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // Form1
             // 
@@ -258,6 +265,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,6 +289,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button buttonCopySDP;
         private System.Windows.Forms.ProgressBar progressBarSDP;
+        private System.Data.DataSet dataSet1;
     }
 }
 

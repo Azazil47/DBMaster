@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.IO;
 using System.ServiceProcess;
 using System.Threading;
@@ -60,6 +61,7 @@ namespace DBMaster
         private void Form1_Load(object sender, EventArgs e)
         {
             greedUpdate();
+            
         }
        
         private void buttonStopAll_Click(object sender, EventArgs e) //Кнопка ОСТАНОВИТЬ все службы
@@ -74,7 +76,8 @@ namespace DBMaster
 
         private void buttonStatus_Click(object sender, EventArgs e)
         {
-            
+            AddServicesForm servicesForm = new AddServicesForm();
+            servicesForm.Show();
             
         }
         private void buttonCopySDP_Click(object sender, EventArgs e)

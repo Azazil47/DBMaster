@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddServicesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddServicesForm.Designer.cs">
+      <DependentUpon>AddServicesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CopyClass.cs" />
     <Compile Include="DbCopyForm.cs">
       <SubType>Form</SubType>
@@ -62,6 +68,9 @@
     <Compile Include="ServiceClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddServicesForm.resx">
+      <DependentUpon>AddServicesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DbCopyForm.resx">
       <DependentUpon>DbCopyForm.cs</DependentUpon>
     </EmbeddedResource>

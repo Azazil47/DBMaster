@@ -15,12 +15,12 @@ namespace DBMaster
 
         public static void getService()
         {
-            string Services = Properties.Settings.Default._serviceList;
+           string Services = Properties.Settings.Default._serviceList;
            string[] list = Services.Split();
-            foreach (string item in list)
-            {
+           foreach (string item in list)
+           {
                 listService.Add(item);
-            }
+           }
 
         }
 
@@ -31,14 +31,12 @@ namespace DBMaster
 
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             getService();
             //LoadService();
             myForm = new Form1();
             Application.Run(myForm);
-            
         }
     }
 }
