@@ -42,6 +42,11 @@ namespace DBMaster
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
             filterServices();
         }
     }
