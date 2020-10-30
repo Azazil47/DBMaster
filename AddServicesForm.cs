@@ -45,5 +45,12 @@ namespace DBMaster
         {
             filterServices();
         }
+
+        private void dataGvServices_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            contextMenuServices.Show();
+            
+        }
     }
 }
