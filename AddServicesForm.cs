@@ -12,40 +12,37 @@ namespace DBMaster
 {
     public partial class AddServicesForm : Form
     {
+        private static ServiceController[] list = ServiceController.GetServices();
+        public void filterServices()
+        {
+            string finde = textBox1.Text;
+            dataGvServices.Rows.Clear();
+            foreach (ServiceController item in list)
+            {
+                if (item.DisplayName.ToString().Contains(finde))
+                {
+                    dataGvServices.Rows.Add(item.DisplayName, item.Status);
+                }
+            }
+        }
         public AddServicesForm()
         {
             InitializeComponent();
         }
 
-        private void AddServicesForm_Load(object sender, EventArgs e)
+        private void AddServicesForm_Load(object sender, EventArgs e)//Получение всего списка служб при первом вызове окна
         {
-            ServiceController[] list = ServiceController.GetServices();
-            DataTable serviceTable = new DataTable("ServicesTabel");
-            dataSet1.Tables.Add(serviceTable);
-            //-------------------------------------------------------------------------
-            DataColumn idServices = new DataColumn("id", Type.GetType("System.Int32"));
-            idServices.Unique = true;
-            idServices.AllowDBNull = false;
-            idServices.AutoIncrement = true;
-            idServices.AutoIncrementSeed = 1;
-            idServices.AutoIncrementStep = 1;
-            //-------------------------------------------------------------------------
-            DataColumn nameServices = new DataColumn("Name", Type.GetType("System.String"));
-            //-------------------------------------------------------------------------
-            DataColumn statusServices = new DataColumn("Status", Type.GetType("System.String"));
-            //-------------------------------------------------------------------------
-            serviceTable.Columns.Add(idServices);
-            serviceTable.Columns.Add(nameServices);
-            serviceTable.Columns.Add(statusServices);
-            //-------------------------------------------------------------------------
-            serviceTable.PrimaryKey = new DataColumn[] { serviceTable.Columns["id"] };
-            foreach (ServiceController service in list)
+            
+           
+            foreach (ServiceController item in list)
             {
-                serviceTable.Rows.Add(new object[] { null, service.ServiceName, service.Status.ToString() });
-
+                dataGvServices.Rows.Add(item.DisplayName, item.Status);
             }
-            dataGridView1.DataSource = dataSet1.Tables[0];
+        }
 
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            filterServices();
         }
     }
 }
