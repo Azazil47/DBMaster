@@ -21,7 +21,7 @@ namespace DBMaster
 
         public void Copy(string fileSource, string fileDestination) //Метод копирования БД
         {
-            if(ServiceClass.ChekServices(Program.listService))
+            if(ServiceClass.ChekServices(Program.controllers))
             {
                 MessageBox.Show("Не все службы остановлены");
             }
@@ -50,7 +50,7 @@ namespace DBMaster
                 chekMD5(fileSource, fileDestination);
             }
         }
-
+        
         public void chekMD5(string fileSource, string fileDestination)
         {
             byte[] hash1;

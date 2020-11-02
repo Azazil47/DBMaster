@@ -11,18 +11,23 @@ namespace DBMaster
     static class Program
     {
         public static Form1 myForm;
-        public static List<String> listService = new List<String>();
+       // public static List<String> listService = new List<String>(); Старый список больше не используется
         public static List<ServiceController> controllers = new List<ServiceController>();
 
         public static void getService()
         {
            string services = Properties.Settings.Default._serviceList;
-           string[] list = services.Split();
-           foreach (string item in list)
-           {
-                controllers.Add(new ServiceController(item));
-           }
-
+            if (services != "")
+            {
+                string[] list = services.Split();
+                foreach (string item in list)
+                {
+                    controllers.Add(new ServiceController(item));
+                }
+            }
+            
+            
+            
         }
 
         /// <summary>

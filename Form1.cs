@@ -44,10 +44,10 @@ namespace DBMaster
             Invoke((MethodInvoker)delegate ()
             {
                 dataGridView1.Rows.Clear();
-                foreach (String item in Program.listService)
+                foreach (ServiceController item in Program.controllers)
                 {
-                   string status  = new ServiceController(item).Status.ToString();
-                   dataGridView1.Rows.Add(item, status);
+                   //string status  = new ServiceController(item).Status.ToString();
+                   //dataGridView1.Rows.Add(item, status);
                 }
                
             });
@@ -66,12 +66,12 @@ namespace DBMaster
        
         private void buttonStopAll_Click(object sender, EventArgs e) //Кнопка ОСТАНОВИТЬ все службы
         {
-            ServiceClass.StopAll(Program.listService);
+            ServiceClass.StopAll(Program.controllers);
         }
 
         private void buttonStartAll_Click(object sender, EventArgs e) // Кнопка ЗАПУСТИТЬ все службы
         {
-            ServiceClass.StartAll(Program.listService);
+            ServiceClass.StartAll(Program.controllers);
         }
 
         private void buttonStatus_Click(object sender, EventArgs e)

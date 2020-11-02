@@ -99,22 +99,22 @@ public static class ServiceClass // : ServiceController
         }
     }
 
-    public static void StartAll(List<String> list)
+    public static void StartAll(List<ServiceController> list)
     {
-        foreach (String item in list)
+        foreach (ServiceController item in list)
         {
             Thread thread = new Thread(Start);
             thread.Start(item);
         }
     }
     
-    public static Boolean ChekServices(List<String> list)
+    public static Boolean ChekServices(List<ServiceController> list)
     {
         Boolean flag = false;
-        foreach (String item in list)
+        foreach (ServiceController item in list)
         {
-            ServiceController service = new ServiceController(item);
-            if (!service.Status.Equals(ServiceControllerStatus.Stopped))
+            //ServiceController service = new ServiceController(item);
+            if (!item.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 flag = true;
             }
