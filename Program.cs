@@ -12,14 +12,15 @@ namespace DBMaster
     {
         public static Form1 myForm;
         public static List<String> listService = new List<String>();
+        public static List<ServiceController> controllers = new List<ServiceController>();
 
         public static void getService()
         {
-           string Services = Properties.Settings.Default._serviceList;
-           string[] list = Services.Split();
+           string services = Properties.Settings.Default._serviceList;
+           string[] list = services.Split();
            foreach (string item in list)
            {
-                listService.Add(item);
+                controllers.Add(new ServiceController(item));
            }
 
         }

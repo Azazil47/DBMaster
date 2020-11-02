@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 public static class ServiceClass // : ServiceController
 {
-    public static void Start(Object setname)
+    public static void Start(object name)
     {
-        String name = (String)setname;
-        ServiceController service = new ServiceController(name);
+       // String name = (String)setname;
+        ServiceController service = (ServiceController) name;
         try
         {
             if(service.Status.Equals(ServiceControllerStatus.Stopped))
@@ -36,23 +36,23 @@ public static class ServiceClass // : ServiceController
                 }
             }else
             {
-                MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
-                MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
+                MyLoger.writeFile(-1, "служба", "xxx", "не может быть остановлена");// xxx
+                MyLoger.writeTextBox(-1, "служба", "xxx", "не может быть остановлена");//xxx
             }
         }
         catch (Exception)
         {
-            MessageBox.Show($"Со этой службой \"{name}\", что-то не так.", "Предупреждение");
-            MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
-            MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
+            MessageBox.Show($"Со этой службой \"xxx\", что-то не так.", "Предупреждение");//xxx
+            MyLoger.writeFile(-1, "служба", "xxx", "не может быть остановлена");//xxx
+            MyLoger.writeTextBox(-1, "служба", "xxx", "не может быть остановлена");//xxx
         }
         
     }
 
-    public static void Stop(Object setname)
+    public static void Stop(object name)
     {
-        String name = (String)setname;
-        ServiceController service = new ServiceController(name);
+        //String name = (String)setname;
+        ServiceController service = (ServiceController)name;
         try
         {
             if(service.Status.Equals(ServiceControllerStatus.Running))
@@ -78,25 +78,24 @@ public static class ServiceClass // : ServiceController
                 }
             } else
             {
-                MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
-                MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
+                MyLoger.writeFile(-1, "служба", "xxx", "не может быть остановлена");//xxx
+                MyLoger.writeTextBox(-1, "служба", "xxx", "не может быть остановлена");//xxx
             }
         }
         catch (Exception)
         {
-            MessageBox.Show($"Со этой службой \"{name}\", что-то не так.", "Предупреждение");
-            MyLoger.writeFile(-1, "служба", name, "не может быть остановлена");
-            MyLoger.writeTextBox(-1, "служба", name, "не может быть остановлена");
+            MessageBox.Show($"Со этой службой \"xxx\", что-то не так.", "Предупреждение");//xxx
+            MyLoger.writeFile(-1, "служба", "xxx", "не может быть остановлена");//xxx
+            MyLoger.writeTextBox(-1, "служба", "xxx", "не может быть остановлена");//xxx
         }
     }
 
-    public static void StopAll(List<String> list)
+    public static void StopAll(List<ServiceController> list)
     {
-        foreach (String item in list)
+        foreach (ServiceController item in list)
         {
             Thread thread = new Thread(Stop);
             thread.Start(item);
-            
         }
     }
 
@@ -106,7 +105,6 @@ public static class ServiceClass // : ServiceController
         {
             Thread thread = new Thread(Start);
             thread.Start(item);
-            
         }
     }
     
