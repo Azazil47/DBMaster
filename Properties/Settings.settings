@@ -9,6 +9,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="_serviceList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">spooler</Value>
+    </Setting>
+    <Setting Name="fddsf" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

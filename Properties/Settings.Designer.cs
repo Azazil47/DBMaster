@@ -49,13 +49,25 @@ namespace DBMaster.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("spooler")]
         public string _serviceList {
             get {
                 return ((string)(this["_serviceList"]));
             }
             set {
                 this["_serviceList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fddsf {
+            get {
+                return ((string)(this["fddsf"]));
+            }
+            set {
+                this["fddsf"] = value;
             }
         }
     }

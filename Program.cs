@@ -22,7 +22,33 @@ namespace DBMaster
                 string[] list = services.Split();
                 foreach (string item in list)
                 {
-                    controllers.Add(new ServiceController(item));
+                    using (ServiceController sc = new ServiceController(item))
+                    {
+                        try
+                        {
+                            if (sc.Status != ServiceControllerStatus.Running)
+                            {
+                                sc.Start();
+                                sc.WaitForStatus(ServiceControllerStatus.Running, new TimeSpan(0, 0, 10));
+                                //service is now Started    
+                                controllers.Add(sc);
+                            }
+                            else
+                            {
+                                controllers.Add(sc);
+                                //Service was already started
+                            }
+                        }
+                        catch (System.ServiceProcess.TimeoutException)
+                        {
+                            //Service was stopped but could not restart (10 second timeout)
+                        }
+                        catch (InvalidOperationException)
+                        {
+                            MessageBox.Show("This Service does not exist");
+                            //This Service does not exist       
+                        }
+                    }
                 }
             }
             

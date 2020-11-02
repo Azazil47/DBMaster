@@ -47,9 +47,8 @@ namespace DBMaster
                 foreach (ServiceController item in Program.controllers)
                 {
                    //string status  = new ServiceController(item).Status.ToString();
-                   //dataGridView1.Rows.Add(item, status);
+                   dataGridView1.Rows.Add(item.DisplayName, item.Status.ToString());
                 }
-               
             });
         }
         public Form1()
@@ -60,7 +59,7 @@ namespace DBMaster
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //greedUpdate();
+            greedUpdate();
             
         }
        
