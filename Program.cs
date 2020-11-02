@@ -31,11 +31,13 @@ namespace DBMaster
                                 sc.Start();
                                 sc.WaitForStatus(ServiceControllerStatus.Running, new TimeSpan(0, 0, 10));
                                 //service is now Started    
-                                controllers.Add(sc);
+                                controllers.Add(new ServiceController(item));
+                                
                             }
                             else
                             {
-                                controllers.Add(sc);
+                                controllers.Add(new ServiceController(item));
+                                
                                 //Service was already started
                             }
                         }

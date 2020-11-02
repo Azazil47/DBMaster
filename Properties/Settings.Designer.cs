@@ -58,17 +58,5 @@ namespace DBMaster.Properties {
                 this["_serviceList"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string fddsf {
-            get {
-                return ((string)(this["fddsf"]));
-            }
-            set {
-                this["fddsf"] = value;
-            }
-        }
     }
 }
