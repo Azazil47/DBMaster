@@ -11,10 +11,9 @@ namespace DBMaster
     static class Program
     {
         public static Form1 myForm;
-       // public static List<String> listService = new List<String>(); Старый список больше не используется
         public static List<ServiceController> controllers = new List<ServiceController>();
 
-        public static void getService()
+        public static void getService()//Десереализация с проверкой корректности служб (нужно переделать для записи в лог без страшных исключений)
         {
            string services = Properties.Settings.Default._serviceList;
             if (services != "")
@@ -41,13 +40,14 @@ namespace DBMaster
                                 //Service was already started
                             }
                         }
-                        catch (System.ServiceProcess.TimeoutException)
+                        catch (System.ServiceProcess.TimeoutException e)
                         {
+                            MessageBox.Show(e.ToString());
                             //Service was stopped but could not restart (10 second timeout)
                         }
-                        catch (InvalidOperationException)
+                        catch (InvalidOperationException e)
                         {
-                            MessageBox.Show("This Service does not exist");
+                            MessageBox.Show(e.ToString());
                             //This Service does not exist       
                         }
                     }
@@ -68,7 +68,6 @@ namespace DBMaster
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             getService();
-            //LoadService();
             myForm = new Form1();
             Application.Run(myForm);
         }

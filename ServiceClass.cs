@@ -113,7 +113,6 @@ public static class ServiceClass // : ServiceController
         Boolean flag = false;
         foreach (ServiceController item in list)
         {
-            //ServiceController service = new ServiceController(item);
             if (!item.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 flag = true;

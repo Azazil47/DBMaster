@@ -32,8 +32,6 @@ namespace DBMaster
 
         private void AddServicesForm_Load(object sender, EventArgs e)//Получение всего списка служб при первом вызове окна
         {
-            
-           
             foreach (ServiceController item in list)
             {
                 dataGvServices.Rows.Add(item.DisplayName, item.Status);
